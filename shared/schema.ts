@@ -14,8 +14,8 @@ export const partnershipInquiries = pgTable("partnership_inquiries", {
   email: text("email").notNull(),
   companyName: text("company_name").notNull(),
   phoneNumber: text("phone_number").notNull(),
-  businessType: text("business_type").notNull(),
-  message: text("message").notNull(),
+  businessType: text("business_type"),
+  message: text("message"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 

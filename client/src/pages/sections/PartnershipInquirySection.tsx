@@ -19,8 +19,6 @@ const partnershipFormSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
   companyName: z.string().min(2, "Company name must be at least 2 characters"),
   phoneNumber: z.string().min(10, "Phone number must be at least 10 characters"),
-  businessType: z.string().min(1, "Please select a business type"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
 type PartnershipFormData = z.infer<typeof partnershipFormSchema>;
@@ -37,8 +35,6 @@ export const PartnershipInquirySection = (): JSX.Element => {
       email: "",
       companyName: "",
       phoneNumber: "",
-      businessType: "",
-      message: "",
     },
   });
 
@@ -50,7 +46,11 @@ export const PartnershipInquirySection = (): JSX.Element => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          businessType: null,
+          message: null,
+        }),
       });
 
       if (!response.ok) {
@@ -345,55 +345,6 @@ export const PartnershipInquirySection = (): JSX.Element => {
                     )}
                   />
                 </div>
-
-                {/* Business Type */}
-                <FormField
-                  control={form.control}
-                  name="businessType"
-                  render={({ field }) => (
-                    <FormItem className="w-full">
-                      <FormLabel className="[font-family:'Poppins',Helvetica] font-medium text-black text-sm mb-1">
-                        Business Type
-                      </FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger className="h-10 md:h-12 rounded-[8px] border border-black">
-                            <SelectValue placeholder="Select your business type" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          {businessTypes.map((type) => (
-                            <SelectItem key={type} value={type}>
-                              {type}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                {/* Message */}
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem className="w-full">
-                      <FormLabel className="[font-family:'Poppins',Helvetica] font-medium text-black text-sm mb-1">
-                        Message
-                      </FormLabel>
-                      <FormControl>
-                        <Textarea
-                          {...field}
-                          className="h-20 md:h-24 rounded-[8px] border border-black resize-none"
-                          placeholder="Tell us about your business, expected order volumes, and partnership requirements."
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
 
                 {/* Submit Button */}
                 <Button 
