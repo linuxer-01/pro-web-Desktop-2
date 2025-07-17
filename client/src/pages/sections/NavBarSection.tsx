@@ -50,14 +50,14 @@ export const NavBarSection = (): JSX.Element => {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center">
+        <div className="hidden lg:flex items-center ml-8 xl:ml-16">
           <NavigationMenu>
-            <NavigationMenuList className="flex items-end gap-8 xl:gap-[94px]">
+            <NavigationMenuList className="flex items-end gap-6 xl:gap-[80px]">
               {navItems.map((item, index) => (
                 <NavigationMenuItem key={index}>
                   <NavigationMenuLink
                     onClick={() => scrollToSection(item.href)}
-                    className="font-['Poppins',Helvetica] font-normal text-black text-lg xl:text-[22px] hover:text-green-600 transition-colors cursor-pointer"
+                    className="font-['Poppins',Helvetica] font-normal text-black text-lg xl:text-[20px] hover:text-green-600 transition-colors cursor-pointer"
                   >
                     {item.name}
                   </NavigationMenuLink>
@@ -70,7 +70,7 @@ export const NavBarSection = (): JSX.Element => {
           <Button
             variant="outline"
             onClick={() => scrollToSection('#partnership')}
-            className="ml-8 xl:ml-[94px] px-4 py-2 h-10 rounded-[7px] border border-solid border-black bg-white hover:bg-gray-50"
+            className="ml-6 xl:ml-[80px] px-4 py-2 h-10 rounded-[7px] border border-solid border-black bg-white hover:bg-gray-50"
           >
             <span className="font-['Poppins',Helvetica] font-normal text-black text-sm xl:text-lg tracking-[-0.36px]">
               Get Quote

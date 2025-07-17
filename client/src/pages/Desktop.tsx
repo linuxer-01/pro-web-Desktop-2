@@ -42,11 +42,11 @@ export const Desktop = (): JSX.Element => {
             Quality Assured by
           </h2>
 
-          <div className="flex flex-row items-center justify-center gap-8 md:gap-12 lg:gap-16 xl:gap-[180px] flex-1">
+          <div className="flex flex-row items-center justify-center gap-8 md:gap-12 lg:gap-16 xl:gap-[120px] flex-1">
             {certifications.map((cert, index) => (
               <img
                 key={index}
-                className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 object-cover"
+                className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-20 lg:h-20 xl:w-24 xl:h-24 object-cover"
                 alt={cert.alt}
                 src={cert.src}
               />
