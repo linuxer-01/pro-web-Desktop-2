@@ -1,8 +1,9 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 export const CustomerReviewsSection = (): JSX.Element => {
-  // Review data for mapping
+  // Review data for mapping - extended for better carousel effect
   const reviews = [
     {
       title: "Top Choice",
@@ -28,6 +29,22 @@ export const CustomerReviewsSection = (): JSX.Element => {
       photo: "/figmaAssets/photo-2.png",
       rating: "/figmaAssets/mask-group-2.png",
     },
+    {
+      title: "Top Choice",
+      quote:
+        '"Nutrazs is my top choice and its breaking bad and freaking good."',
+      author: "Walter White",
+      photo: "/figmaAssets/photo-2.png",
+      rating: "/figmaAssets/mask-group.png",
+    },
+    {
+      title: "Top Choice",
+      quote:
+        '"Nutrazs is my top choice and its breaking bad and freaking good."',
+      author: "Walter White",
+      photo: "/figmaAssets/photo-2.png",
+      rating: "/figmaAssets/mask-group-1.png",
+    },
   ];
 
   return (
@@ -43,46 +60,55 @@ export const CustomerReviewsSection = (): JSX.Element => {
           </h3>
         </div>
 
-        {/* Review Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
-          {reviews.map((review, index) => (
-            <Card
-              key={index}
-              className="w-full bg-[#e4e4e4] rounded-[14px] border-none"
-            >
-              <CardContent className="p-8 md:p-10 lg:p-12">
-                <div className="flex flex-col gap-10 md:gap-12 lg:gap-[60px]">
-                  <div className="min-h-[120px] md:min-h-[168px]">
-                    <h4 className="font-['Poppins',Helvetica] font-medium text-[#262525] text-lg md:text-[25.2px] tracking-[-0.5px] md:tracking-[-1.01px] text-center mb-8 md:mb-[72px]">
-                      {review.title}
-                    </h4>
-                    <p className="font-['Poppins',Helvetica] font-bold text-[#323232] text-base md:text-[19.6px] tracking-[-0.4px] md:tracking-[-0.79px] leading-6 md:leading-8">
-                      {review.quote}
-                    </p>
-                  </div>
+        {/* Review Cards Carousel */}
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full max-w-5xl mx-auto"
+        >
+          <CarouselContent className="-ml-4">
+            {reviews.map((review, index) => (
+              <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                <Card className="w-full bg-[#e4e4e4] rounded-[14px] border-none h-full">
+                  <CardContent className="p-4 md:p-6 lg:p-8">
+                    <div className="flex flex-col gap-6 md:gap-8 lg:gap-10 h-full">
+                      <div className="flex-1">
+                        <h4 className="font-['Poppins',Helvetica] font-medium text-[#262525] text-base md:text-lg lg:text-xl tracking-[-0.5px] text-center mb-4 md:mb-6">
+                          {review.title}
+                        </h4>
+                        <p className="font-['Poppins',Helvetica] font-bold text-[#323232] text-sm md:text-base lg:text-lg tracking-[-0.4px] leading-5 md:leading-6">
+                          {review.quote}
+                        </p>
+                      </div>
 
-                  <div className="flex items-center justify-between">
-                    <div className="flex flex-col">
-                      <span className="font-['Poppins',Helvetica] font-medium text-[#4c4c4c] text-sm md:text-[15.8px] tracking-[-0.3px] md:tracking-[-0.63px] mb-2">
-                        {review.author}
-                      </span>
-                      <img
-                        className="w-24 h-4 md:w-[136px] md:h-[25px]"
-                        alt="Rating stars"
-                        src={review.rating}
-                      />
+                      <div className="flex items-center justify-between mt-auto">
+                        <div className="flex flex-col">
+                          <span className="font-['Poppins',Helvetica] font-medium text-[#4c4c4c] text-xs md:text-sm lg:text-base tracking-[-0.3px] mb-2">
+                            {review.author}
+                          </span>
+                          <img
+                            className="w-16 h-3 md:w-20 md:h-4 lg:w-24 lg:h-4"
+                            alt="Rating stars"
+                            src={review.rating}
+                          />
+                        </div>
+                        <img
+                          className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 object-cover rounded-full"
+                          alt="Customer photo"
+                          src={review.photo}
+                        />
+                      </div>
                     </div>
-                    <img
-                      className="w-12 h-12 md:w-[61px] md:h-[61px] object-cover rounded-full"
-                      alt="Customer photo"
-                      src={review.photo}
-                    />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="text-white border-white hover:bg-white hover:text-black -left-6 md:-left-12" />
+          <CarouselNext className="text-white border-white hover:bg-white hover:text-black -right-6 md:-right-12" />
+        </Carousel>
       </div>
     </section>
   );
