@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { OptimizedImage } from "@/components/OptimizedImage";
 
 export const CustomerReviewsSection = (): JSX.Element => {
   // Review data for mapping - extended for better carousel effect
@@ -66,7 +67,7 @@ export const CustomerReviewsSection = (): JSX.Element => {
             align: "start",
             loop: true,
           }}
-          className="w-full max-w-5xl mx-auto"
+          className="w-full max-w-5xl mx-auto carousel-optimized"
         >
           <CarouselContent className="-ml-4">
             {reviews.map((review, index) => (
@@ -88,16 +89,18 @@ export const CustomerReviewsSection = (): JSX.Element => {
                           <span className="font-['Poppins',Helvetica] font-medium text-[#4c4c4c] text-xs md:text-sm lg:text-base tracking-[-0.3px] mb-2">
                             {review.author}
                           </span>
-                          <img
+                          <OptimizedImage
                             className="w-16 h-3 md:w-20 md:h-4 lg:w-24 lg:h-4"
                             alt="Rating stars"
                             src={review.rating}
+                            priority={false}
                           />
                         </div>
-                        <img
+                        <OptimizedImage
                           className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 object-cover rounded-full"
                           alt="Customer photo"
                           src={review.photo}
+                          priority={false}
                         />
                       </div>
                     </div>
