@@ -41,23 +41,18 @@ export const PartnershipInquirySection = (): JSX.Element => {
   // Form submission mutation
   const submitPartnershipMutation = useMutation({
     mutationFn: async (data: PartnershipFormData) => {
-      const response = await fetch("/api/partnership", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbwauh38Yj4zoTSOV90TCsdI5dbwmz_jgbVjHbn7T7phqWPTnOcJ-IDbMFnvQcxAnQ/exec", {
         method: "POST",
+        mode: "no-cors", // Required for Apps Script
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          ...data,
-          businessType: null,
-          message: null,
-        }),
+        body: JSON.stringify(data),
       });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      return response.json();
+      // Since mode is no-cors, we can't check response.ok
+      // We'll assume success if no error is thrown
+      return { success: true };
     },
     onSuccess: () => {
       toast({
@@ -82,6 +77,13 @@ export const PartnershipInquirySection = (): JSX.Element => {
       await submitPartnershipMutation.mutateAsync(data);
     } catch (error) {
       console.error("Form submission error:", error);
+      // With no-cors mode, we might not get detailed error info
+      // but we'll still show error toast
+      toast({
+        title: "Error submitting inquiry",
+        description: "Please try again later or contact us directly.",
+        variant: "destructive",
+      });
     } finally {
       setIsSubmitting(false);
     }
