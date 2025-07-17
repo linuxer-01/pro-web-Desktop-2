@@ -175,11 +175,34 @@ export const PartnershipInquirySection = (): JSX.Element => {
   ];
 
   return (
-    <section id="partnership" className="flex flex-col lg:flex-row items-start gap-12 lg:gap-[120px] px-4 md:px-8 py-16 md:py-20 lg:py-24">
-      {/* Left Column - Process and Contact */}
-      <div className="flex flex-col w-full lg:w-[475px] items-start gap-12 lg:gap-[100px]">
-        {/* Partnership Process Section - Desktop Only */}
-        <div className="hidden lg:flex flex-col items-start gap-10 lg:gap-[75px] w-full">
+    <section id="partnership" className="flex flex-col items-start gap-12 px-4 md:px-8 py-16 md:py-20 lg:py-24">
+      {/* Contact Information Section - Above Form */}
+      <div className="flex flex-col gap-6 lg:gap-[33px] w-full max-w-4xl mx-auto">
+        <h2 className="font-medium [font-family:'Poppins',Helvetica] text-black text-xl md:text-2xl lg:text-[34px] tracking-[-0.8px] lg:tracking-[-1.36px] text-center">
+          Get in Touch
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {contactInfo.map((item, index) => (
+            <div key={index} className="flex flex-col items-center text-center p-4 bg-gray-50 rounded-lg">
+              <img
+                className={`${index === 0 ? "w-8 h-8 lg:w-9 lg:h-9" : index === 1 ? "w-12 h-12 lg:w-16 lg:h-16" : index === 2 ? "w-10 h-10 lg:w-[51px] lg:h-[51px]" : "w-12 h-12 lg:w-14 lg:h-14"} object-cover mb-4`}
+                alt={item.alt}
+                src={item.icon}
+              />
+              <div
+                className={`${index === 0 ? "opacity-70 [font-family:'Poppins',Helvetica] font-normal text-black text-lg lg:text-[24.2px] tracking-[0.8px] lg:tracking-[1.21px]" : "[font-family:'Poppins',Helvetica] text-sm lg:text-base"}`}
+              >
+                {item.content}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Main Content Row */}
+      <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-[120px] w-full">
+        {/* Left Column - Partnership Process (Desktop Only) */}
+        <div className="hidden lg:flex flex-col w-full lg:w-[475px] items-start gap-10 lg:gap-[75px]">
           <div className="w-full max-w-[319px]">
             <h2 className="font-medium [font-family:'Poppins',Helvetica] text-black text-xl md:text-2xl lg:text-[34px] tracking-[-0.8px] lg:tracking-[-1.36px]">
               Partnership Process
@@ -216,30 +239,8 @@ export const PartnershipInquirySection = (): JSX.Element => {
           </div>
         </div>
 
-        {/* Contact Information Section */}
-        <div className="flex flex-col gap-6 lg:gap-[33px] w-full lg:mt-0">
-          {contactInfo.map((item, index) => (
-            <div key={index} className="relative w-full">
-              <div className="flex items-center gap-4 lg:gap-[38px] py-3.5">
-                <img
-                  className={`${index === 0 ? "w-8 h-8 lg:w-9 lg:h-9" : index === 1 ? "w-12 h-12 lg:w-16 lg:h-16" : index === 2 ? "w-10 h-10 lg:w-[51px] lg:h-[51px]" : "w-12 h-12 lg:w-14 lg:h-14"} object-cover`}
-                  alt={item.alt}
-                  src={item.icon}
-                />
-                <div
-                  className={`${index === 0 ? "opacity-70 [font-family:'Poppins',Helvetica] font-normal text-black text-lg lg:text-[24.2px] tracking-[0.8px] lg:tracking-[1.21px]" : "[font-family:'Poppins',Helvetica] text-sm lg:text-base"}`}
-                >
-                  {item.content}
-                </div>
-              </div>
-              <Separator className="mt-4 w-full max-w-[420px]" />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Right Column - Form */}
-      <Card className="w-full lg:w-[673px] rounded-[15.31px] border-[1.53px] border-solid border-black">
+        {/* Right Column - Form */}
+        <Card className="w-full lg:w-[673px] rounded-[15.31px] border-[1.53px] border-solid border-black">
         <CardContent className="p-6 md:p-8 lg:p-[44.79px]">
           <div className="flex flex-col gap-8 lg:gap-[57.85px]">
             {/* Form Header */}
