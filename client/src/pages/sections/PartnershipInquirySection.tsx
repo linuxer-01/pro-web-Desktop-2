@@ -169,31 +169,31 @@ export const PartnershipInquirySection = (): JSX.Element => {
         <h2 className="font-medium [font-family:'Poppins',Helvetica] text-black text-xl md:text-2xl lg:text-[34px] tracking-[-0.8px] lg:tracking-[-1.36px] text-center">
           Get in Touch
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           {contactInfo.map((item, index) => (
-            <div key={index} className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 hover:border-[#186627] group">
-              <div className="flex flex-col items-center text-center space-y-4">
-                <div className="w-16 h-16 bg-[#186627] rounded-full flex items-center justify-center group-hover:bg-[#144d1f] transition-colors">
+            <div key={index} className="bg-white border-2 border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-300 hover:border-[#186627] group">
+              <div className="flex flex-col items-center text-center space-y-3">
+                <div className="w-12 h-12 bg-[#186627] rounded-full flex items-center justify-center group-hover:bg-[#144d1f] transition-colors">
                   <img
-                    className="w-8 h-8 object-cover filter brightness-0 invert"
+                    className="w-6 h-6 object-cover filter brightness-0 invert"
                     alt={item.alt}
                     src={item.icon}
                   />
                 </div>
                 <div>
-                  <h3 className="font-semibold [font-family:'Poppins',Helvetica] text-[#186627] text-lg mb-2">
+                  <h3 className="font-semibold [font-family:'Poppins',Helvetica] text-[#186627] text-sm mb-1">
                     {item.title}
                   </h3>
                   {item.hasButton ? (
-                    <Button className="h-[35px] w-[110px] rounded-[15px] bg-[#207b31] hover:bg-[#186627] border-[1.35px] border-black text-white font-semibold text-[14px] tracking-[0.43px] mb-2">
+                    <Button className="h-[30px] w-[90px] rounded-[12px] bg-[#207b31] hover:bg-[#186627] border-[1px] border-black text-white font-semibold text-[12px] tracking-[0.43px] mb-1">
                       {item.content}
                     </Button>
                   ) : (
-                    <p className="font-medium [font-family:'Poppins',Helvetica] text-black text-base mb-2">
+                    <p className="font-medium [font-family:'Poppins',Helvetica] text-black text-sm mb-1">
                       {item.content}
                     </p>
                   )}
-                  <p className="text-sm [font-family:'Poppins',Helvetica] text-gray-600 leading-relaxed">
+                  <p className="text-xs [font-family:'Poppins',Helvetica] text-gray-600 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
