@@ -31,49 +31,49 @@ export const CustomerReviewsSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="w-full bg-[#323232] py-12">
-      <div className="container mx-auto px-4 flex flex-col gap-12">
+    <section className="w-full bg-[#323232] py-8 md:py-12">
+      <div className="container mx-auto px-4 flex flex-col gap-8 md:gap-12">
         {/* Section Header */}
-        <div className="flex flex-col">
-          <h2 className="font-['Poppins',Helvetica] font-semibold text-[#f0efef] text-6xl tracking-[-2.40px] leading-[100px]">
+        <div className="flex flex-col gap-2 md:gap-4">
+          <h2 className="font-['Poppins',Helvetica] font-semibold text-[#f0efef] text-2xl md:text-4xl lg:text-6xl tracking-[-1px] md:tracking-[-2.40px] leading-tight md:leading-[100px]">
             Why Thousands Trust NUTRAZS?
           </h2>
-          <h3 className="font-['Poppins',Helvetica] font-semibold text-[#e0e0e0] text-[29.5px] tracking-[-1.18px]">
-            Voices of&nbsp;&nbsp;Our Valued Customers.
+          <h3 className="font-['Poppins',Helvetica] font-semibold text-[#e0e0e0] text-lg md:text-xl lg:text-[29.5px] tracking-[-0.5px] md:tracking-[-1.18px]">
+            Voices of Our Valued Customers.
           </h3>
         </div>
 
         {/* Review Cards */}
-        <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reviews.map((review, index) => (
             <Card
               key={index}
-              className="w-[340px] bg-[#e4e4e4] rounded-[14px] border-none"
+              className="w-full bg-[#e4e4e4] rounded-[14px] border-none"
             >
-              <CardContent className="p-8">
-                <div className="flex flex-col gap-[60px]">
-                  <div className="h-[168px]">
-                    <h4 className="font-['Poppins',Helvetica] font-medium text-[#262525] text-[25.2px] tracking-[-1.01px] text-center mb-[72px]">
+              <CardContent className="p-6 md:p-8">
+                <div className="flex flex-col gap-8 md:gap-[60px]">
+                  <div className="min-h-[120px] md:min-h-[168px]">
+                    <h4 className="font-['Poppins',Helvetica] font-medium text-[#262525] text-lg md:text-[25.2px] tracking-[-0.5px] md:tracking-[-1.01px] text-center mb-8 md:mb-[72px]">
                       {review.title}
                     </h4>
-                    <p className="font-['Poppins',Helvetica] font-bold text-[#323232] text-[19.6px] tracking-[-0.79px] leading-8">
+                    <p className="font-['Poppins',Helvetica] font-bold text-[#323232] text-base md:text-[19.6px] tracking-[-0.4px] md:tracking-[-0.79px] leading-6 md:leading-8">
                       {review.quote}
                     </p>
                   </div>
 
                   <div className="flex items-center justify-between">
                     <div className="flex flex-col">
-                      <span className="font-['Poppins',Helvetica] font-medium text-[#4c4c4c] text-[15.8px] tracking-[-0.63px] mb-2">
+                      <span className="font-['Poppins',Helvetica] font-medium text-[#4c4c4c] text-sm md:text-[15.8px] tracking-[-0.3px] md:tracking-[-0.63px] mb-2">
                         {review.author}
                       </span>
                       <img
-                        className="w-[136px] h-[25px]"
+                        className="w-24 h-4 md:w-[136px] md:h-[25px]"
                         alt="Rating stars"
                         src={review.rating}
                       />
                     </div>
                     <img
-                      className="w-[61px] h-[61px] object-cover"
+                      className="w-12 h-12 md:w-[61px] md:h-[61px] object-cover rounded-full"
                       alt="Customer photo"
                       src={review.photo}
                     />

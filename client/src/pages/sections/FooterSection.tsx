@@ -51,38 +51,38 @@ export const FooterSection = (): JSX.Element => {
   ];
 
   return (
-    <footer className="w-full bg-[#323232] py-9">
+    <footer className="w-full bg-[#323232] py-6 md:py-9">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center gap-[38px]">
+        <div className="flex flex-col items-center gap-8 md:gap-[38px]">
           {/* Main footer content */}
-          <div className="flex flex-wrap justify-between w-full gap-8">
+          <div className="flex flex-col lg:flex-row lg:justify-between w-full gap-8">
             {/* Company info section */}
-            <div className="flex flex-col w-full md:w-[530px] items-start gap-[27px]">
-              <div className="flex items-start gap-7">
+            <div className="flex flex-col w-full lg:w-[530px] items-start gap-6 lg:gap-[27px]">
+              <div className="flex items-start gap-4 lg:gap-7">
                 <img
-                  className="w-[83px] h-[84.26px] object-cover"
+                  className="w-16 h-16 lg:w-[83px] lg:h-[84.26px] object-cover"
                   alt="Logo placeholder"
                   src="/figmaAssets/logoplaceholder.png"
                 />
-                <h2 className="font-['Poppins',Helvetica] font-normal text-white text-[55px] tracking-[-2.20px] leading-[100px] whitespace-nowrap">
+                <h2 className="font-['Poppins',Helvetica] font-normal text-white text-2xl md:text-4xl lg:text-[55px] tracking-[-1px] lg:tracking-[-2.20px] leading-tight lg:leading-[100px]">
                   NutraZS
                 </h2>
               </div>
-              <p className="font-['Poppins',Helvetica] font-normal text-white text-xl tracking-[-0.80px] leading-[50px]">
+              <p className="font-['Poppins',Helvetica] font-normal text-white text-base md:text-lg lg:text-xl tracking-[-0.4px] lg:tracking-[-0.80px] leading-relaxed lg:leading-[50px]">
                 {companyDescription}
               </p>
             </div>
 
             {/* Quick links section */}
-            <div className="flex flex-col w-full md:w-[156px] items-start gap-[9px]">
-              <h3 className="font-['Poppins',Helvetica] font-medium text-white text-3xl tracking-[-1.20px] leading-[50px]">
+            <div className="flex flex-col w-full lg:w-[156px] items-start gap-2 lg:gap-[9px]">
+              <h3 className="font-['Poppins',Helvetica] font-medium text-white text-xl md:text-2xl lg:text-3xl tracking-[-0.8px] lg:tracking-[-1.20px] leading-tight lg:leading-[50px]">
                 Quick Links
               </h3>
               {quickLinks.map((link, index) => (
                 <a
                   key={`quick-link-${index}`}
                   href="#"
-                  className="font-['Poppins',Helvetica] font-light text-white text-[22px] tracking-[-0.88px] leading-[50px] hover:underline"
+                  className="font-['Poppins',Helvetica] font-light text-white text-base md:text-lg lg:text-[22px] tracking-[-0.4px] lg:tracking-[-0.88px] leading-relaxed lg:leading-[50px] hover:underline"
                 >
                   {link}
                 </a>
@@ -90,15 +90,15 @@ export const FooterSection = (): JSX.Element => {
             </div>
 
             {/* Contact info section */}
-            <div className="flex flex-col w-full md:w-[333px] items-center gap-[43px]">
-              <h3 className="font-['Poppins',Helvetica] font-medium text-white text-3xl text-center tracking-[-1.20px] leading-[50px] w-full">
+            <div className="flex flex-col w-full lg:w-[333px] items-center gap-6 lg:gap-[43px]">
+              <h3 className="font-['Poppins',Helvetica] font-medium text-white text-xl md:text-2xl lg:text-3xl text-center tracking-[-0.8px] lg:tracking-[-1.20px] leading-tight lg:leading-[50px] w-full">
                 Contact Info
               </h3>
 
               {contactInfo.map((item, index) => (
                 <div
                   key={`contact-item-${index}`}
-                  className="flex items-start gap-8 w-full"
+                  className="flex items-start gap-4 lg:gap-8 w-full"
                 >
                   <img
                     className={`${item.iconWidth} ${item.iconHeight} object-cover`}
@@ -119,7 +119,7 @@ export const FooterSection = (): JSX.Element => {
           <Separator className="bg-white/20 w-full max-w-[1073px]" />
 
           {/* Copyright */}
-          <div className="font-['Poppins',Helvetica] font-light text-white text-[25px] tracking-[-1.00px] leading-[100px] text-center">
+          <div className="font-['Poppins',Helvetica] font-light text-white text-sm md:text-lg lg:text-[25px] tracking-[-0.5px] lg:tracking-[-1.00px] leading-relaxed lg:leading-[100px] text-center">
             © 2024 NutraZS. All rights reserved. | Designed for excellence in
             supplement manufacturing.
           </div>

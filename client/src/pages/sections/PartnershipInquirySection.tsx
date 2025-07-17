@@ -81,38 +81,38 @@ export const PartnershipInquirySection = (): JSX.Element => {
   ];
 
   return (
-    <div className="flex items-center gap-[89px]">
+    <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-[89px] px-4 md:px-8 py-8 md:py-12">
       {/* Left Column - Process and Contact */}
-      <div className="flex flex-col w-[475px] items-start gap-[85px]">
+      <div className="flex flex-col w-full lg:w-[475px] items-start gap-8 lg:gap-[85px]">
         {/* Partnership Process Section */}
-        <div className="flex flex-col items-start gap-[61px] w-full">
-          <div className="w-[319px]">
-            <h2 className="font-medium [font-family:'Poppins',Helvetica] text-black text-[34px] tracking-[-1.36px]">
+        <div className="flex flex-col items-start gap-8 lg:gap-[61px] w-full">
+          <div className="w-full max-w-[319px]">
+            <h2 className="font-medium [font-family:'Poppins',Helvetica] text-black text-xl md:text-2xl lg:text-[34px] tracking-[-0.8px] lg:tracking-[-1.36px]">
               Partnership Process
             </h2>
-            <p className="mt-4 font-light [font-family:'Poppins',Helvetica] text-black text-[15.4px] tracking-[-0.62px]">
-              Sub heading for the the Partnership&nbsp;&nbsp;Process.
+            <p className="mt-4 font-light [font-family:'Poppins',Helvetica] text-black text-sm md:text-base lg:text-[15.4px] tracking-[-0.3px] lg:tracking-[-0.62px]">
+              Sub heading for the the Partnership Process.
             </p>
           </div>
 
           <div className="relative w-full">
             {/* Timeline Line */}
-            <div className="absolute w-[3px] h-[312px] top-[26px] left-[14px] bg-[url('/figmaAssets/line-1.svg')]" />
+            <div className="absolute w-[3px] h-[250px] md:h-[312px] top-[26px] left-[14px] bg-[url('/figmaAssets/line-1.svg')]" />
 
             {/* Timeline Steps */}
-            <div className="flex flex-col gap-[74px]">
+            <div className="flex flex-col gap-8 md:gap-12 lg:gap-[74px]">
               {processSteps.map((step, index) => (
-                <div key={index} className="flex items-start gap-[22px]">
-                  <div className="w-[30px] h-[30px] bg-[#186627] rounded-[15px] flex items-center justify-center">
-                    <span className="opacity-70 [font-family:'Poppins',Helvetica] font-semibold text-white text-[12.7px] tracking-[-0.51px]">
+                <div key={index} className="flex items-start gap-4 lg:gap-[22px]">
+                  <div className="w-[30px] h-[30px] bg-[#186627] rounded-[15px] flex items-center justify-center flex-shrink-0">
+                    <span className="opacity-70 [font-family:'Poppins',Helvetica] font-semibold text-white text-xs lg:text-[12.7px] tracking-[-0.3px] lg:tracking-[-0.51px]">
                       {step.number}
                     </span>
                   </div>
                   <div className="flex flex-col">
-                    <h3 className="font-medium [font-family:'Poppins',Helvetica] text-black text-[19.1px] tracking-[-0.77px]">
+                    <h3 className="font-medium [font-family:'Poppins',Helvetica] text-black text-base md:text-lg lg:text-[19.1px] tracking-[-0.4px] lg:tracking-[-0.77px]">
                       {step.title}
                     </h3>
-                    <p className="mt-2 font-light [font-family:'Poppins',Helvetica] text-black text-[12.7px] tracking-[-0.51px]">
+                    <p className="mt-2 font-light [font-family:'Poppins',Helvetica] text-black text-xs md:text-sm lg:text-[12.7px] tracking-[-0.3px] lg:tracking-[-0.51px]">
                       {step.description}
                     </p>
                   </div>
@@ -123,114 +123,114 @@ export const PartnershipInquirySection = (): JSX.Element => {
         </div>
 
         {/* Contact Information Section */}
-        <div className="flex flex-col gap-[33px] w-full">
+        <div className="flex flex-col gap-6 lg:gap-[33px] w-full">
           {contactInfo.map((item, index) => (
             <div key={index} className="relative w-full">
-              <div className="flex items-center gap-[38px] py-3.5">
+              <div className="flex items-center gap-4 lg:gap-[38px] py-3.5">
                 <img
-                  className={`${index === 0 ? "w-9 h-9" : index === 1 ? "w-16 h-16" : index === 2 ? "w-[51px] h-[51px]" : "w-14 h-14"} object-cover`}
+                  className={`${index === 0 ? "w-8 h-8 lg:w-9 lg:h-9" : index === 1 ? "w-12 h-12 lg:w-16 lg:h-16" : index === 2 ? "w-10 h-10 lg:w-[51px] lg:h-[51px]" : "w-12 h-12 lg:w-14 lg:h-14"} object-cover`}
                   alt={item.alt}
                   src={item.icon}
                 />
                 <div
-                  className={`${index === 0 ? "opacity-70 [font-family:'Poppins',Helvetica] font-normal text-black text-[24.2px] tracking-[1.21px]" : "[font-family:'Poppins',Helvetica]"}`}
+                  className={`${index === 0 ? "opacity-70 [font-family:'Poppins',Helvetica] font-normal text-black text-lg lg:text-[24.2px] tracking-[0.8px] lg:tracking-[1.21px]" : "[font-family:'Poppins',Helvetica] text-sm lg:text-base"}`}
                 >
                   {item.content}
                 </div>
               </div>
-              <Separator className="mt-4 w-[420px]" />
+              <Separator className="mt-4 w-full max-w-[420px]" />
             </div>
           ))}
         </div>
       </div>
 
       {/* Right Column - Form */}
-      <Card className="w-[673px] rounded-[15.31px] border-[1.53px] border-solid border-black">
-        <CardContent className="p-[44.79px]">
-          <div className="flex flex-col gap-[57.85px]">
+      <Card className="w-full lg:w-[673px] rounded-[15.31px] border-[1.53px] border-solid border-black">
+        <CardContent className="p-6 md:p-8 lg:p-[44.79px]">
+          <div className="flex flex-col gap-8 lg:gap-[57.85px]">
             {/* Form Header */}
-            <div className="w-[609.34px]">
-              <h1 className="[font-family:'Poppins',Helvetica] font-normal text-black text-[47.2px] tracking-[-1.89px]">
+            <div className="w-full">
+              <h1 className="[font-family:'Poppins',Helvetica] font-normal text-black text-2xl md:text-3xl lg:text-[47.2px] tracking-[-1px] lg:tracking-[-1.89px]">
                 Partnership Inquiry Form
               </h1>
-              <p className="mt-6 [font-family:'Poppins',Helvetica] font-light text-black text-[18.2px] tracking-[-0.73px]">
+              <p className="mt-4 lg:mt-6 [font-family:'Poppins',Helvetica] font-light text-black text-base md:text-lg lg:text-[18.2px] tracking-[-0.4px] lg:tracking-[-0.73px]">
                 Fill out the form below to start your partnership journey with
                 NUTRAZS
               </p>
             </div>
 
             {/* Form Fields */}
-            <div className="flex flex-col gap-[42.03px] w-[590.52px]">
+            <div className="flex flex-col gap-6 lg:gap-[42.03px] w-full">
               {/* Name and Email Row */}
-              <div className="flex items-center gap-[8.25px] w-full">
-                <div className="flex flex-col gap-[9.56px] w-[255.67px]">
-                  <label className="[font-family:'Poppins',Helvetica] font-medium text-black text-[21.7px] tracking-[-0.87px]">
+              <div className="flex flex-col md:flex-row items-center gap-4 lg:gap-[8.25px] w-full">
+                <div className="flex flex-col gap-2 lg:gap-[9.56px] w-full md:w-1/2">
+                  <label className="[font-family:'Poppins',Helvetica] font-medium text-black text-lg lg:text-[21.7px] tracking-[-0.4px] lg:tracking-[-0.87px]">
                     Full Name
                   </label>
                   <Input
-                    className="h-[57px] rounded-[8.36px] border-[1.39px] border-solid border-black"
+                    className="h-12 lg:h-[57px] rounded-[8.36px] border-[1.39px] border-solid border-black"
                     placeholder="Name"
                   />
                 </div>
-                <div className="flex flex-col gap-[9.56px] w-[352px]">
-                  <label className="[font-family:'Poppins',Helvetica] font-medium text-black text-[21.7px] tracking-[-0.87px]">
+                <div className="flex flex-col gap-2 lg:gap-[9.56px] w-full md:w-1/2">
+                  <label className="[font-family:'Poppins',Helvetica] font-medium text-black text-lg lg:text-[21.7px] tracking-[-0.4px] lg:tracking-[-0.87px]">
                     Email Address
                   </label>
                   <Input
-                    className="h-[57px] rounded-[8.36px] border-[1.39px] border-solid border-black"
+                    className="h-12 lg:h-[57px] rounded-[8.36px] border-[1.39px] border-solid border-black"
                     placeholder="Email"
                   />
                 </div>
               </div>
 
               {/* Company and Phone Row */}
-              <div className="flex items-center gap-[8.25px] w-full">
-                <div className="flex flex-col gap-[10.05px] w-[323.3px]">
-                  <label className="[font-family:'Poppins',Helvetica] font-medium text-black text-[22.8px] tracking-[-0.91px]">
+              <div className="flex flex-col md:flex-row items-center gap-4 lg:gap-[8.25px] w-full">
+                <div className="flex flex-col gap-2 lg:gap-[10.05px] w-full md:w-1/2">
+                  <label className="[font-family:'Poppins',Helvetica] font-medium text-black text-lg lg:text-[22.8px] tracking-[-0.4px] lg:tracking-[-0.91px]">
                     Company Name
                   </label>
                   <Input
-                    className="h-[60px] rounded-[8.78px] border-[1.46px] border-solid border-black"
+                    className="h-12 lg:h-[60px] rounded-[8.78px] border-[1.46px] border-solid border-black"
                     placeholder="Company name"
                   />
                 </div>
-                <div className="flex flex-col gap-[10.05px] w-[258.97px]">
-                  <label className="[font-family:'Poppins',Helvetica] font-medium text-black text-[22.8px] tracking-[-0.91px]">
+                <div className="flex flex-col gap-2 lg:gap-[10.05px] w-full md:w-1/2">
+                  <label className="[font-family:'Poppins',Helvetica] font-medium text-black text-lg lg:text-[22.8px] tracking-[-0.4px] lg:tracking-[-0.91px]">
                     Phone Number
                   </label>
                   <Input
-                    className="h-[61px] rounded-[8.78px] border-[1.46px] border-solid border-black"
+                    className="h-12 lg:h-[61px] rounded-[8.78px] border-[1.46px] border-solid border-black"
                     placeholder="Phone"
                   />
                 </div>
               </div>
 
               {/* Business Type */}
-              <div className="flex flex-col gap-[10.51px] w-[450.03px]">
-                <label className="[font-family:'Poppins',Helvetica] font-medium text-black text-[23.8px] tracking-[-0.95px]">
+              <div className="flex flex-col gap-2 lg:gap-[10.51px] w-full lg:w-[450.03px]">
+                <label className="[font-family:'Poppins',Helvetica] font-medium text-black text-lg lg:text-[23.8px] tracking-[-0.4px] lg:tracking-[-0.95px]">
                   Business Type
                 </label>
                 <Select>
-                  <SelectTrigger className="h-[63px] rounded-[9.18px] border-[1.53px] border-solid border-black">
+                  <SelectTrigger className="h-12 lg:h-[63px] rounded-[9.18px] border-[1.53px] border-solid border-black">
                     <SelectValue placeholder="Select your business type" />
                   </SelectTrigger>
                 </Select>
               </div>
 
               {/* Message */}
-              <div className="w-[590.52px]">
-                <label className="[font-family:'Poppins',Helvetica] font-medium text-black text-[23.8px] tracking-[-0.95px]">
+              <div className="w-full">
+                <label className="[font-family:'Poppins',Helvetica] font-medium text-black text-lg lg:text-[23.8px] tracking-[-0.4px] lg:tracking-[-0.95px]">
                   Message
                 </label>
                 <Textarea
-                  className="mt-3 h-[104px] rounded-[9.18px] border-[1.53px] border-solid border-black"
+                  className="mt-3 h-24 lg:h-[104px] rounded-[9.18px] border-[1.53px] border-solid border-black"
                   placeholder="Tell us about your business, expected order volumes, and partnership requirements."
                 />
               </div>
             </div>
 
             {/* Submit Button */}
-            <Button className="w-[590px] h-[70px] bg-[#186526] rounded-[9.18px] border-[1.53px] border-solid border-black [font-family:'Poppins',Helvetica] font-medium text-[#afdda4] text-[23.8px] tracking-[-0.95px]">
+            <Button className="w-full lg:w-[590px] h-12 lg:h-[70px] bg-[#186526] rounded-[9.18px] border-[1.53px] border-solid border-black [font-family:'Poppins',Helvetica] font-medium text-[#afdda4] text-lg lg:text-[23.8px] tracking-[-0.4px] lg:tracking-[-0.95px]">
               Submit Partnership Inquiry
             </Button>
           </div>

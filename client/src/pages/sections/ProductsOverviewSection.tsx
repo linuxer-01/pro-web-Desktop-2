@@ -19,39 +19,39 @@ export const ProductsOverviewSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col items-center gap-[26px] w-full">
-      <h2 className="w-full font-['Poppins',Helvetica] font-semibold text-[#323232] text-[66.8px] text-center tracking-[-2.67px] leading-[153.0px]">
+    <section className="flex flex-col items-center gap-6 md:gap-[26px] w-full px-4 md:px-0">
+      <h2 className="w-full font-['Poppins',Helvetica] font-semibold text-[#323232] text-3xl md:text-5xl lg:text-[66.8px] text-center tracking-[-1.5px] md:tracking-[-2.67px] leading-tight md:leading-[153.0px]">
         Our Products
       </h2>
 
-      <div className="w-full bg-[#323232] py-[59px] px-[118px]">
-        <div className="flex flex-col gap-1.5 max-w-[1189px] mx-auto">
+      <div className="w-full bg-[#323232] py-8 md:py-12 lg:py-[59px] px-4 md:px-8 lg:px-[118px]">
+        <div className="flex flex-col gap-8 md:gap-12 lg:gap-1.5 max-w-[1189px] mx-auto">
           {/* First product - Protein powders */}
-          <div className="flex items-center justify-between gap-[178px] w-full">
-            <Card className="w-[548.1px] h-[346.33px] rounded-[5.5px] border-[1.1px] border-solid border-black bg-white" />
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-[178px] w-full">
+            <Card className="w-full max-w-md lg:w-[548.1px] h-[200px] md:h-[280px] lg:h-[346.33px] rounded-[5.5px] border-[1.1px] border-solid border-black bg-white order-2 lg:order-1" />
 
-            <div className="flex flex-col w-[458px] items-end gap-4">
-              <h3 className="w-full font-['Poppins',Helvetica] font-semibold text-white text-[58.6px] text-right tracking-[-2.34px] leading-[83.7px]">
+            <div className="flex flex-col w-full lg:w-[458px] items-center lg:items-end gap-4 order-1 lg:order-2">
+              <h3 className="w-full font-['Poppins',Helvetica] font-semibold text-white text-2xl md:text-3xl lg:text-[58.6px] text-center lg:text-right tracking-[-1px] lg:tracking-[-2.34px] leading-tight lg:leading-[83.7px]">
                 {products[0].title}
               </h3>
-              <p className="w-[450px] font-['Poppins',Helvetica] font-light text-[#cccbcb] text-[22.9px] text-right tracking-[-0.91px] leading-[32.6px]">
+              <p className="w-full lg:w-[450px] font-['Poppins',Helvetica] font-light text-[#cccbcb] text-base md:text-lg lg:text-[22.9px] text-center lg:text-right tracking-[-0.4px] lg:tracking-[-0.91px] leading-relaxed lg:leading-[32.6px]">
                 {products[0].description}
               </p>
             </div>
           </div>
 
           {/* Second product - Capsules */}
-          <div className="flex items-center justify-between gap-[184px] w-full">
-            <div className="flex flex-col w-[458px] items-start gap-[9px]">
-              <h3 className="w-full font-['Poppins',Helvetica] font-semibold text-white text-[58.6px] tracking-[-2.34px] leading-[83.7px]">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-[184px] w-full">
+            <div className="flex flex-col w-full lg:w-[458px] items-center lg:items-start gap-4 order-1">
+              <h3 className="w-full font-['Poppins',Helvetica] font-semibold text-white text-2xl md:text-3xl lg:text-[58.6px] text-center lg:text-left tracking-[-1px] lg:tracking-[-2.34px] leading-tight lg:leading-[83.7px]">
                 {products[1].title}
               </h3>
-              <p className="w-[380.9px] font-['Poppins',Helvetica] font-light text-[#cccbcb] text-[22.9px] tracking-[-0.91px] leading-[32.6px]">
+              <p className="w-full lg:w-[380.9px] font-['Poppins',Helvetica] font-light text-[#cccbcb] text-base md:text-lg lg:text-[22.9px] text-center lg:text-left tracking-[-0.4px] lg:tracking-[-0.91px] leading-relaxed lg:leading-[32.6px]">
                 {products[1].description}
               </p>
             </div>
 
-            <Card className="w-[548.1px] h-[346.33px] rounded-[5.5px] border-[1.1px] border-solid border-black bg-white" />
+            <Card className="w-full max-w-md lg:w-[548.1px] h-[200px] md:h-[280px] lg:h-[346.33px] rounded-[5.5px] border-[1.1px] border-solid border-black bg-white order-2" />
           </div>
         </div>
       </div>

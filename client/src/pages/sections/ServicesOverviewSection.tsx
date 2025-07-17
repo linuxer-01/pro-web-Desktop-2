@@ -39,40 +39,39 @@ export const ServicesOverviewSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col items-center gap-[29px] w-full max-w-[1303px]">
-      <div className="flex flex-col items-center gap-[13px] w-full max-w-[968px]">
-        <h2 className="w-full font-['Poppins',Helvetica] font-semibold text-[#083d0e] text-[86.2px] text-center tracking-[-3.45px] leading-[150.8px]">
+    <section className="flex flex-col items-center gap-8 md:gap-[29px] w-full max-w-[1303px] px-4 md:px-8 py-8 md:py-12">
+      <div className="flex flex-col items-center gap-4 md:gap-[13px] w-full max-w-[968px]">
+        <h2 className="w-full font-['Poppins',Helvetica] font-semibold text-[#083d0e] text-3xl md:text-5xl lg:text-[86.2px] text-center tracking-[-2px] md:tracking-[-3.45px] leading-tight md:leading-[150.8px]">
           Services we provide
         </h2>
-        <p className="w-full opacity-80 font-['Poppins',Helvetica] font-semibold text-black text-[27.1px] text-center tracking-[-1.08px] leading-[47.4px]">
+        <p className="w-full opacity-80 font-['Poppins',Helvetica] font-semibold text-black text-lg md:text-xl lg:text-[27.1px] text-center tracking-[-0.5px] md:tracking-[-1.08px] leading-relaxed md:leading-[47.4px]">
           We provide the services that you consider as a services and we spent s
           lot of time to design this website.So please consider our efforts and
           hit the CTA button
         </p>
       </div>
 
-      <div className="flex items-center gap-4 w-full">
+      <div className="flex flex-col lg:flex-row items-center gap-4 w-full">
         {services.map((service, index) => (
           <Card
             key={index}
-            className={`relative ${service.className} bg-[url(${service.backgroundImage})] bg-[100%_100%] border-0 rounded-none`}
+            className="relative w-full lg:w-auto lg:flex-1 h-[400px] md:h-[500px] lg:h-[733px] bg-cover bg-center border-0 rounded-lg lg:rounded-none"
+            style={{ backgroundImage: `url(${service.backgroundImage})` }}
           >
-            <CardContent
-              className={`flex flex-col items-start gap-[13px] absolute ${service.contentClassName} p-0`}
-            >
-              <h3
-                className={`w-full font-['Poppins',Helvetica] ${service.titleClassName}`}
-              >
-                {service.title}
-              </h3>
-              <p className="font-['Poppins',Helvetica] font-semibold text-white text-[20.2px] tracking-[-0.61px] leading-[35.9px]">
-                {service.description}
-              </p>
-              {service.hasButton && (
-                <Button className="w-[205px] h-[46px] bg-[#d9d9d9] rounded-[22.78px] text-black font-['Poppins',Helvetica] font-bold text-[16.6px] leading-[29.5px] mt-[22px] hover:bg-[#c0c0c0]">
-                  Download Catalog
-                </Button>
-              )}
+            <CardContent className="flex flex-col items-start justify-end gap-4 md:gap-[13px] absolute inset-0 p-6 md:p-8">
+              <div className="flex flex-col items-start gap-4 md:gap-[13px] w-full">
+                <h3 className="font-['Poppins',Helvetica] font-extrabold text-white text-2xl md:text-3xl lg:text-[44.7px] tracking-[-1px] md:tracking-[-1.34px] leading-tight md:leading-[53.4px]">
+                  {service.title}
+                </h3>
+                <p className="font-['Poppins',Helvetica] font-semibold text-white text-sm md:text-base lg:text-[20.2px] tracking-[-0.3px] md:tracking-[-0.61px] leading-relaxed md:leading-[35.9px]">
+                  {service.description}
+                </p>
+                {service.hasButton && (
+                  <Button className="w-auto lg:w-[205px] h-[46px] bg-[#d9d9d9] rounded-[22.78px] text-black font-['Poppins',Helvetica] font-bold text-sm md:text-[16.6px] leading-[29.5px] mt-[22px] hover:bg-[#c0c0c0]">
+                    Download Catalog
+                  </Button>
+                )}
+              </div>
             </CardContent>
           </Card>
         ))}

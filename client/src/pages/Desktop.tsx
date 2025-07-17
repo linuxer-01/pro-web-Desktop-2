@@ -35,18 +35,18 @@ export const Desktop = (): JSX.Element => {
       <NavBarSection />
       <HeroSection />
 
-      <section className="flex flex-col items-center justify-center gap-2.5 relative w-full">
-        <div className="flex items-center justify-center gap-36 px-[79px] py-0 w-full">
-          <h2 className="w-fit mt-[-1.50px] [font-family:'Poppins',Helvetica] font-semibold text-[#3d3b3b] text-[40px] tracking-[-1.60px] leading-[70px]">
+      <section className="flex flex-col items-center justify-center gap-2.5 relative w-full px-4 md:px-8 lg:px-[79px] py-8 md:py-0">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-36 w-full max-w-7xl">
+          <h2 className="text-center lg:text-left font-['Poppins',Helvetica] font-semibold text-[#3d3b3b] text-2xl md:text-3xl lg:text-[40px] tracking-[-1.60px] leading-tight lg:leading-[70px]">
             Certified &amp; <br />
             Quality Assured by
           </h2>
 
-          <div className="flex items-center gap-[164px] flex-1">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-16 lg:gap-[164px] flex-1">
             {certifications.map((cert, index) => (
               <img
                 key={index}
-                className={`${cert.width} ${cert.height} object-cover`}
+                className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-cover"
                 alt={cert.alt}
                 src={cert.src}
               />
