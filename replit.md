@@ -26,6 +26,7 @@ This project is being migrated from Figma to Replit environment. The migration p
 - Made partnership inquiry form fully functional with validation and backend API
 - Made certification logos (GMP, ISO, FSSAI) display horizontally on all devices
 - Hidden partnership process section on mobile/tablet (desktop only) - July 17, 2025
+- Moved contact details above partnership form with enhanced card design - July 17, 2025
 
 ## User Preferences
 - Non-technical user who prefers simple, everyday language

@@ -133,43 +133,31 @@ export const PartnershipInquirySection = (): JSX.Element => {
   const contactInfo = [
     {
       icon: "/figmaAssets/icon.png",
-      content: "7200281134",
+      title: "Phone Support",
+      content: "+91 7200281134",
+      description: "Call us for immediate assistance",
       alt: "Phone icon",
     },
     {
-      icon: "/figmaAssets/icon-1.png",
+      icon: "/figmaAssets/emailicon.png",
+      title: "Email Us",
       content: "nutrazs.off1@gmail.com",
+      description: "Send us your inquiries anytime",
       alt: "Email icon",
     },
     {
       icon: "/figmaAssets/icon-2.png",
-      content: (
-        <div className="flex flex-col">
-          <span className="opacity-80 font-semibold text-[#003800] text-[13.8px] tracking-[0.41px]">
-            Click Below to chat with us
-          </span>
-          <div className="mt-2 ml-10">
-            <Button className="h-[31px] w-[102px] rounded-[15px] bg-[#207b31] border-[1.35px] border-black text-white font-semibold text-[14.3px] tracking-[0.43px]">
-              Chat
-            </Button>
-          </div>
-        </div>
-      ),
+      title: "Live Chat",
+      content: "Chat with us",
+      description: "Get instant support online",
       alt: "Chat icon",
+      hasButton: true,
     },
     {
       icon: "/figmaAssets/icon-3.png",
-      content: (
-        <span className="opacity-80 text-[21.6px] tracking-[0.65px]">
-          <span className="font-bold tracking-[0.14px]">
-            52/5, Sri Thirupathi Nagar
-          </span>
-          <span className="tracking-[0.14px]">
-            {" "}
-            Kottalampakkam, Pudupet Panruti Taluk, Cuddalore Tamil Nadu– 607106
-          </span>
-        </span>
-      ),
+      title: "Visit Us",
+      content: "52/5, Sri Thirupathi Nagar",
+      description: "Kottalampakkam, Pudupet Panruti Taluk, Cuddalore Tamil Nadu– 607106",
       alt: "Location icon",
     },
   ];
@@ -183,16 +171,32 @@ export const PartnershipInquirySection = (): JSX.Element => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {contactInfo.map((item, index) => (
-            <div key={index} className="flex flex-col items-center text-center p-4 bg-gray-50 rounded-lg">
-              <img
-                className={`${index === 0 ? "w-8 h-8 lg:w-9 lg:h-9" : index === 1 ? "w-12 h-12 lg:w-16 lg:h-16" : index === 2 ? "w-10 h-10 lg:w-[51px] lg:h-[51px]" : "w-12 h-12 lg:w-14 lg:h-14"} object-cover mb-4`}
-                alt={item.alt}
-                src={item.icon}
-              />
-              <div
-                className={`${index === 0 ? "opacity-70 [font-family:'Poppins',Helvetica] font-normal text-black text-lg lg:text-[24.2px] tracking-[0.8px] lg:tracking-[1.21px]" : "[font-family:'Poppins',Helvetica] text-sm lg:text-base"}`}
-              >
-                {item.content}
+            <div key={index} className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 hover:border-[#186627] group">
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="w-16 h-16 bg-[#186627] rounded-full flex items-center justify-center group-hover:bg-[#144d1f] transition-colors">
+                  <img
+                    className="w-8 h-8 object-cover filter brightness-0 invert"
+                    alt={item.alt}
+                    src={item.icon}
+                  />
+                </div>
+                <div>
+                  <h3 className="font-semibold [font-family:'Poppins',Helvetica] text-[#186627] text-lg mb-2">
+                    {item.title}
+                  </h3>
+                  {item.hasButton ? (
+                    <Button className="h-[35px] w-[110px] rounded-[15px] bg-[#207b31] hover:bg-[#186627] border-[1.35px] border-black text-white font-semibold text-[14px] tracking-[0.43px] mb-2">
+                      {item.content}
+                    </Button>
+                  ) : (
+                    <p className="font-medium [font-family:'Poppins',Helvetica] text-black text-base mb-2">
+                      {item.content}
+                    </p>
+                  )}
+                  <p className="text-sm [font-family:'Poppins',Helvetica] text-gray-600 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
