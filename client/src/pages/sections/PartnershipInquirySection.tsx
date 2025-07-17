@@ -241,22 +241,22 @@ export const PartnershipInquirySection = (): JSX.Element => {
 
         {/* Right Column - Form */}
         <Card className="w-full lg:w-[673px] rounded-[15.31px] border-[1.53px] border-solid border-black">
-        <CardContent className="p-6 md:p-8 lg:p-[44.79px]">
-          <div className="flex flex-col gap-8 lg:gap-[57.85px]">
-            {/* Form Header */}
-            <div className="w-full">
-              <h1 className="[font-family:'Poppins',Helvetica] font-normal text-black text-2xl md:text-3xl lg:text-[47.2px] tracking-[-1px] lg:tracking-[-1.89px]">
-                Partnership Inquiry Form
-              </h1>
-              <p className="mt-4 lg:mt-6 [font-family:'Poppins',Helvetica] font-light text-black text-base md:text-lg lg:text-[18.2px] tracking-[-0.4px] lg:tracking-[-0.73px]">
-                Fill out the form below to start your partnership journey with
-                NUTRAZS
-              </p>
-            </div>
+          <CardContent className="p-6 md:p-8 lg:p-[44.79px]">
+            <div className="flex flex-col gap-8 lg:gap-[57.85px]">
+              {/* Form Header */}
+              <div className="w-full">
+                <h1 className="[font-family:'Poppins',Helvetica] font-normal text-black text-2xl md:text-3xl lg:text-[47.2px] tracking-[-1px] lg:tracking-[-1.89px]">
+                  Partnership Inquiry Form
+                </h1>
+                <p className="mt-4 lg:mt-6 [font-family:'Poppins',Helvetica] font-light text-black text-base md:text-lg lg:text-[18.2px] tracking-[-0.4px] lg:tracking-[-0.73px]">
+                  Fill out the form below to start your partnership journey with
+                  NUTRAZS
+                </p>
+              </div>
 
-            {/* Partnership Form */}
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-6 lg:gap-[42.03px] w-full">
+              {/* Partnership Form */}
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-6 lg:gap-[42.03px] w-full">
                 {/* Name and Email Row */}
                 <div className="flex flex-col md:flex-row items-start gap-4 lg:gap-[8.25px] w-full">
                   <FormField
@@ -400,11 +400,12 @@ export const PartnershipInquirySection = (): JSX.Element => {
                 >
                   {isSubmitting ? "Submitting..." : "Submit Partnership Inquiry"}
                 </Button>
-              </form>
-            </Form>
-          </div>
-        </CardContent>
-      </Card>
+                </form>
+              </Form>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </section>
   );
 };
