@@ -163,37 +163,37 @@ export const PartnershipInquirySection = (): JSX.Element => {
   ];
 
   return (
-    <section id="partnership" className="flex flex-col items-start gap-12 px-4 md:px-8 py-16 md:py-20 lg:py-24">
+    <section id="partnership" className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
       {/* Contact Information Section - Above Form */}
-      <div className="flex flex-col gap-6 lg:gap-[33px] w-full max-w-4xl mx-auto">
-        <h2 className="font-medium [font-family:'Poppins',Helvetica] text-black text-xl md:text-2xl lg:text-[34px] tracking-[-0.8px] lg:tracking-[-1.36px] text-center">
+      <div className="mb-8 md:mb-12">
+        <h2 className="font-medium [font-family:'Poppins',Helvetica] text-black text-xl md:text-2xl lg:text-3xl tracking-[-0.8px] text-center mb-6 md:mb-8">
           Get in Touch
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 max-w-5xl mx-auto">
           {contactInfo.map((item, index) => (
-            <div key={index} className="bg-white border-2 border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-300 hover:border-[#186627] group">
-              <div className="flex flex-col items-center text-center space-y-3">
-                <div className="w-12 h-12 bg-[#186627] rounded-full flex items-center justify-center group-hover:bg-[#144d1f] transition-colors">
+            <div key={index} className="bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md transition-all duration-300 hover:border-[#186627] group">
+              <div className="flex flex-col items-center text-center space-y-2">
+                <div className="w-10 h-10 bg-[#186627] rounded-full flex items-center justify-center group-hover:bg-[#144d1f] transition-colors">
                   <img
-                    className="w-6 h-6 object-cover filter brightness-0 invert"
+                    className="w-5 h-5 object-cover filter brightness-0 invert"
                     alt={item.alt}
                     src={item.icon}
                   />
                 </div>
-                <div>
-                  <h3 className="font-semibold [font-family:'Poppins',Helvetica] text-[#186627] text-sm mb-1">
+                <div className="w-full">
+                  <h3 className="font-semibold [font-family:'Poppins',Helvetica] text-[#186627] text-xs mb-1">
                     {item.title}
                   </h3>
                   {item.hasButton ? (
-                    <Button className="h-[30px] w-[90px] rounded-[12px] bg-[#207b31] hover:bg-[#186627] border-[1px] border-black text-white font-semibold text-[12px] tracking-[0.43px] mb-1">
+                    <Button className="h-[28px] w-[80px] rounded-[10px] bg-[#207b31] hover:bg-[#186627] border-[1px] border-black text-white font-semibold text-[11px] mb-1">
                       {item.content}
                     </Button>
                   ) : (
-                    <p className="font-medium [font-family:'Poppins',Helvetica] text-black text-sm mb-1">
+                    <p className="font-medium [font-family:'Poppins',Helvetica] text-black text-xs mb-1 break-words">
                       {item.content}
                     </p>
                   )}
-                  <p className="text-xs [font-family:'Poppins',Helvetica] text-gray-600 leading-relaxed">
+                  <p className="text-[10px] [font-family:'Poppins',Helvetica] text-gray-600 leading-tight">
                     {item.description}
                   </p>
                 </div>
@@ -204,36 +204,36 @@ export const PartnershipInquirySection = (): JSX.Element => {
       </div>
 
       {/* Main Content Row */}
-      <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-[120px] w-full">
+      <div className="flex flex-col lg:flex-row items-start gap-6 lg:gap-8">
         {/* Left Column - Partnership Process (Desktop Only) */}
-        <div className="hidden lg:flex flex-col w-full lg:w-[475px] items-start gap-10 lg:gap-[75px]">
-          <div className="w-full max-w-[319px]">
-            <h2 className="font-medium [font-family:'Poppins',Helvetica] text-black text-xl md:text-2xl lg:text-[34px] tracking-[-0.8px] lg:tracking-[-1.36px]">
+        <div className="hidden lg:flex flex-col w-full lg:w-[400px] items-start gap-6">
+          <div className="w-full">
+            <h2 className="font-medium [font-family:'Poppins',Helvetica] text-black text-2xl lg:text-3xl tracking-[-0.8px] mb-3">
               Partnership Process
             </h2>
-            <p className="mt-4 font-light [font-family:'Poppins',Helvetica] text-black text-sm md:text-base lg:text-[15.4px] tracking-[-0.3px] lg:tracking-[-0.62px]">
-              Sub heading for the the Partnership Process.
+            <p className="font-light [font-family:'Poppins',Helvetica] text-black text-sm tracking-[-0.3px]">
+              Sub heading for the Partnership Process.
             </p>
           </div>
 
           <div className="relative w-full">
             {/* Timeline Line */}
-            <div className="absolute w-[3px] h-[250px] md:h-[312px] top-[26px] left-[14px] bg-[url('/figmaAssets/line-1.svg')]" />
+            <div className="absolute w-[3px] h-[280px] top-[26px] left-[14px] bg-[url('/figmaAssets/line-1.svg')]" />
 
             {/* Timeline Steps */}
-            <div className="flex flex-col gap-8 md:gap-12 lg:gap-[74px]">
+            <div className="flex flex-col gap-6">
               {processSteps.map((step, index) => (
-                <div key={index} className="flex items-start gap-4 lg:gap-[22px]">
+                <div key={index} className="flex items-start gap-4">
                   <div className="w-[30px] h-[30px] bg-[#186627] rounded-[15px] flex items-center justify-center flex-shrink-0">
-                    <span className="opacity-70 [font-family:'Poppins',Helvetica] font-semibold text-white text-xs lg:text-[12.7px] tracking-[-0.3px] lg:tracking-[-0.51px]">
+                    <span className="opacity-70 [font-family:'Poppins',Helvetica] font-semibold text-white text-xs">
                       {step.number}
                     </span>
                   </div>
-                  <div className="flex flex-col">
-                    <h3 className="font-medium [font-family:'Poppins',Helvetica] text-black text-base md:text-lg lg:text-[19.1px] tracking-[-0.4px] lg:tracking-[-0.77px]">
+                  <div className="flex flex-col flex-1">
+                    <h3 className="font-medium [font-family:'Poppins',Helvetica] text-black text-base tracking-[-0.4px]">
                       {step.title}
                     </h3>
-                    <p className="mt-2 font-light [font-family:'Poppins',Helvetica] text-black text-xs md:text-sm lg:text-[12.7px] tracking-[-0.3px] lg:tracking-[-0.51px]">
+                    <p className="mt-1 font-light [font-family:'Poppins',Helvetica] text-black text-sm tracking-[-0.3px]">
                       {step.description}
                     </p>
                   </div>
@@ -244,37 +244,36 @@ export const PartnershipInquirySection = (): JSX.Element => {
         </div>
 
         {/* Right Column - Form */}
-        <Card className="w-full lg:w-[673px] rounded-[15.31px] border-[1.53px] border-solid border-black">
-          <CardContent className="p-6 md:p-8 lg:p-[44.79px]">
-            <div className="flex flex-col gap-8 lg:gap-[57.85px]">
+        <Card className="w-full lg:flex-1 max-w-2xl mx-auto lg:mx-0 rounded-[15px] border-[1.5px] border-solid border-black">
+          <CardContent className="p-4 md:p-6 lg:p-8">
+            <div className="flex flex-col gap-6">
               {/* Form Header */}
               <div className="w-full">
-                <h1 className="[font-family:'Poppins',Helvetica] font-normal text-black text-2xl md:text-3xl lg:text-[47.2px] tracking-[-1px] lg:tracking-[-1.89px]">
+                <h1 className="[font-family:'Poppins',Helvetica] font-normal text-black text-xl md:text-2xl lg:text-3xl tracking-[-1px] mb-3">
                   Partnership Inquiry Form
                 </h1>
-                <p className="mt-4 lg:mt-6 [font-family:'Poppins',Helvetica] font-light text-black text-base md:text-lg lg:text-[18.2px] tracking-[-0.4px] lg:tracking-[-0.73px]">
-                  Fill out the form below to start your partnership journey with
-                  NUTRAZS
+                <p className="[font-family:'Poppins',Helvetica] font-light text-black text-sm md:text-base tracking-[-0.4px]">
+                  Fill out the form below to start your partnership journey with NUTRAZS
                 </p>
               </div>
 
               {/* Partnership Form */}
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-6 lg:gap-[42.03px] w-full">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4 w-full">
                 {/* Name and Email Row */}
-                <div className="flex flex-col md:flex-row items-start gap-4 lg:gap-[8.25px] w-full">
+                <div className="flex flex-col md:flex-row items-start gap-4 w-full">
                   <FormField
                     control={form.control}
                     name="fullName"
                     render={({ field }) => (
                       <FormItem className="w-full md:w-1/2">
-                        <FormLabel className="[font-family:'Poppins',Helvetica] font-medium text-black text-lg lg:text-[21.7px] tracking-[-0.4px] lg:tracking-[-0.87px]">
+                        <FormLabel className="[font-family:'Poppins',Helvetica] font-medium text-black text-sm mb-1">
                           Full Name
                         </FormLabel>
                         <FormControl>
                           <Input
                             {...field}
-                            className="h-12 lg:h-[57px] rounded-[8.36px] border-[1.39px] border-solid border-black"
+                            className="h-10 md:h-12 rounded-[8px] border border-black"
                             placeholder="Enter your full name"
                           />
                         </FormControl>
@@ -287,14 +286,14 @@ export const PartnershipInquirySection = (): JSX.Element => {
                     name="email"
                     render={({ field }) => (
                       <FormItem className="w-full md:w-1/2">
-                        <FormLabel className="[font-family:'Poppins',Helvetica] font-medium text-black text-lg lg:text-[21.7px] tracking-[-0.4px] lg:tracking-[-0.87px]">
+                        <FormLabel className="[font-family:'Poppins',Helvetica] font-medium text-black text-sm mb-1">
                           Email Address
                         </FormLabel>
                         <FormControl>
                           <Input
                             {...field}
                             type="email"
-                            className="h-12 lg:h-[57px] rounded-[8.36px] border-[1.39px] border-solid border-black"
+                            className="h-10 md:h-12 rounded-[8px] border border-black"
                             placeholder="Enter your email address"
                           />
                         </FormControl>
@@ -305,19 +304,19 @@ export const PartnershipInquirySection = (): JSX.Element => {
                 </div>
 
                 {/* Company and Phone Row */}
-                <div className="flex flex-col md:flex-row items-start gap-4 lg:gap-[8.25px] w-full">
+                <div className="flex flex-col md:flex-row items-start gap-4 w-full">
                   <FormField
                     control={form.control}
                     name="companyName"
                     render={({ field }) => (
                       <FormItem className="w-full md:w-1/2">
-                        <FormLabel className="[font-family:'Poppins',Helvetica] font-medium text-black text-lg lg:text-[22.8px] tracking-[-0.4px] lg:tracking-[-0.91px]">
+                        <FormLabel className="[font-family:'Poppins',Helvetica] font-medium text-black text-sm mb-1">
                           Company Name
                         </FormLabel>
                         <FormControl>
                           <Input
                             {...field}
-                            className="h-12 lg:h-[60px] rounded-[8.78px] border-[1.46px] border-solid border-black"
+                            className="h-10 md:h-12 rounded-[8px] border border-black"
                             placeholder="Enter your company name"
                           />
                         </FormControl>
@@ -330,14 +329,14 @@ export const PartnershipInquirySection = (): JSX.Element => {
                     name="phoneNumber"
                     render={({ field }) => (
                       <FormItem className="w-full md:w-1/2">
-                        <FormLabel className="[font-family:'Poppins',Helvetica] font-medium text-black text-lg lg:text-[22.8px] tracking-[-0.4px] lg:tracking-[-0.91px]">
+                        <FormLabel className="[font-family:'Poppins',Helvetica] font-medium text-black text-sm mb-1">
                           Phone Number
                         </FormLabel>
                         <FormControl>
                           <Input
                             {...field}
                             type="tel"
-                            className="h-12 lg:h-[61px] rounded-[8.78px] border-[1.46px] border-solid border-black"
+                            className="h-10 md:h-12 rounded-[8px] border border-black"
                             placeholder="Enter your phone number"
                           />
                         </FormControl>
@@ -352,13 +351,13 @@ export const PartnershipInquirySection = (): JSX.Element => {
                   control={form.control}
                   name="businessType"
                   render={({ field }) => (
-                    <FormItem className="w-full lg:w-[450.03px]">
-                      <FormLabel className="[font-family:'Poppins',Helvetica] font-medium text-black text-lg lg:text-[23.8px] tracking-[-0.4px] lg:tracking-[-0.95px]">
+                    <FormItem className="w-full">
+                      <FormLabel className="[font-family:'Poppins',Helvetica] font-medium text-black text-sm mb-1">
                         Business Type
                       </FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
-                          <SelectTrigger className="h-12 lg:h-[63px] rounded-[9.18px] border-[1.53px] border-solid border-black">
+                          <SelectTrigger className="h-10 md:h-12 rounded-[8px] border border-black">
                             <SelectValue placeholder="Select your business type" />
                           </SelectTrigger>
                         </FormControl>
@@ -381,13 +380,13 @@ export const PartnershipInquirySection = (): JSX.Element => {
                   name="message"
                   render={({ field }) => (
                     <FormItem className="w-full">
-                      <FormLabel className="[font-family:'Poppins',Helvetica] font-medium text-black text-lg lg:text-[23.8px] tracking-[-0.4px] lg:tracking-[-0.95px]">
+                      <FormLabel className="[font-family:'Poppins',Helvetica] font-medium text-black text-sm mb-1">
                         Message
                       </FormLabel>
                       <FormControl>
                         <Textarea
                           {...field}
-                          className="mt-3 h-24 lg:h-[104px] rounded-[9.18px] border-[1.53px] border-solid border-black"
+                          className="h-20 md:h-24 rounded-[8px] border border-black resize-none"
                           placeholder="Tell us about your business, expected order volumes, and partnership requirements."
                         />
                       </FormControl>
@@ -400,7 +399,7 @@ export const PartnershipInquirySection = (): JSX.Element => {
                 <Button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className="w-full lg:w-[590px] h-12 lg:h-[70px] bg-[#186526] hover:bg-[#144d1f] disabled:bg-gray-400 rounded-[9.18px] border-[1.53px] border-solid border-black [font-family:'Poppins',Helvetica] font-medium text-[#afdda4] text-lg lg:text-[23.8px] tracking-[-0.4px] lg:tracking-[-0.95px]"
+                  className="w-full h-10 md:h-12 bg-[#186526] hover:bg-[#144d1f] disabled:bg-gray-400 rounded-[8px] border border-black [font-family:'Poppins',Helvetica] font-medium text-[#afdda4] text-sm md:text-base"
                 >
                   {isSubmitting ? "Submitting..." : "Submit Partnership Inquiry"}
                 </Button>

@@ -61,9 +61,7 @@ export const Desktop = (): JSX.Element => {
       <PartnershipInquirySection />
       <FooterSection />
 
-      <div className="absolute w-[76px] top-[304px] left-[107px] [font-family:'Poppins',Helvetica] font-semibold text-white text-[12.7px] text-center tracking-[0] leading-[21.9px] whitespace-nowrap">
-        Bulk Inquiry
-      </div>
+
     </div>
   );
 };
