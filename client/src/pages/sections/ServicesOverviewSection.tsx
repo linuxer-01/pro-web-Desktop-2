@@ -39,8 +39,8 @@ export const ServicesOverviewSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col items-center gap-8 md:gap-[29px] w-full max-w-[1303px] px-4 md:px-8 py-8 md:py-12">
-      <div className="flex flex-col items-center gap-4 md:gap-[13px] w-full max-w-[968px]">
+    <section className="flex flex-col items-center gap-16 md:gap-20 lg:gap-24 w-full max-w-[1303px] px-4 md:px-8 py-16 md:py-20 lg:py-24">
+      <div className="flex flex-col items-center gap-8 md:gap-10 lg:gap-12 w-full max-w-[968px]">
         <h2 className="w-full font-['Poppins',Helvetica] font-semibold text-[#083d0e] text-3xl md:text-5xl lg:text-[86.2px] text-center tracking-[-2px] md:tracking-[-3.45px] leading-tight md:leading-[150.8px]">
           Services we provide
         </h2>
@@ -51,15 +51,15 @@ export const ServicesOverviewSection = (): JSX.Element => {
         </p>
       </div>
 
-      <div className="flex flex-col lg:flex-row items-center gap-4 w-full">
+      <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-4 w-full">
         {services.map((service, index) => (
           <Card
             key={index}
             className="relative w-full lg:w-auto lg:flex-1 h-[400px] md:h-[500px] lg:h-[733px] bg-cover bg-center border-0 rounded-lg lg:rounded-none"
             style={{ backgroundImage: `url(${service.backgroundImage})` }}
           >
-            <CardContent className="flex flex-col items-start justify-end gap-4 md:gap-[13px] absolute inset-0 p-6 md:p-8">
-              <div className="flex flex-col items-start gap-4 md:gap-[13px] w-full">
+            <CardContent className="flex flex-col items-start justify-end gap-6 md:gap-8 lg:gap-[13px] absolute inset-0 p-8 md:p-10 lg:p-8">
+              <div className="flex flex-col items-start gap-6 md:gap-8 lg:gap-[13px] w-full">
                 <h3 className="font-['Poppins',Helvetica] font-extrabold text-white text-2xl md:text-3xl lg:text-[44.7px] tracking-[-1px] md:tracking-[-1.34px] leading-tight md:leading-[53.4px]">
                   {service.title}
                 </h3>

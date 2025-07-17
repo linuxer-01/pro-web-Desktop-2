@@ -81,11 +81,11 @@ export const PartnershipInquirySection = (): JSX.Element => {
   ];
 
   return (
-    <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-[89px] px-4 md:px-8 py-8 md:py-12">
+    <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-[120px] px-4 md:px-8 py-16 md:py-20 lg:py-24">
       {/* Left Column - Process and Contact */}
-      <div className="flex flex-col w-full lg:w-[475px] items-start gap-8 lg:gap-[85px]">
+      <div className="flex flex-col w-full lg:w-[475px] items-start gap-12 lg:gap-[100px]">
         {/* Partnership Process Section */}
-        <div className="flex flex-col items-start gap-8 lg:gap-[61px] w-full">
+        <div className="flex flex-col items-start gap-10 lg:gap-[75px] w-full">
           <div className="w-full max-w-[319px]">
             <h2 className="font-medium [font-family:'Poppins',Helvetica] text-black text-xl md:text-2xl lg:text-[34px] tracking-[-0.8px] lg:tracking-[-1.36px]">
               Partnership Process

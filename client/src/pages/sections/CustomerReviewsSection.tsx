@@ -31,10 +31,10 @@ export const CustomerReviewsSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="w-full bg-[#323232] py-8 md:py-12">
-      <div className="container mx-auto px-4 flex flex-col gap-8 md:gap-12">
+    <section className="w-full bg-[#323232] py-16 md:py-20 lg:py-24">
+      <div className="container mx-auto px-4 flex flex-col gap-16 md:gap-20 lg:gap-24">
         {/* Section Header */}
-        <div className="flex flex-col gap-2 md:gap-4">
+        <div className="flex flex-col gap-4 md:gap-6 lg:gap-8">
           <h2 className="font-['Poppins',Helvetica] font-semibold text-[#f0efef] text-2xl md:text-4xl lg:text-6xl tracking-[-1px] md:tracking-[-2.40px] leading-tight md:leading-[100px]">
             Why Thousands Trust NUTRAZS?
           </h2>
@@ -44,14 +44,14 @@ export const CustomerReviewsSection = (): JSX.Element => {
         </div>
 
         {/* Review Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
           {reviews.map((review, index) => (
             <Card
               key={index}
               className="w-full bg-[#e4e4e4] rounded-[14px] border-none"
             >
-              <CardContent className="p-6 md:p-8">
-                <div className="flex flex-col gap-8 md:gap-[60px]">
+              <CardContent className="p-8 md:p-10 lg:p-12">
+                <div className="flex flex-col gap-10 md:gap-12 lg:gap-[60px]">
                   <div className="min-h-[120px] md:min-h-[168px]">
                     <h4 className="font-['Poppins',Helvetica] font-medium text-[#262525] text-lg md:text-[25.2px] tracking-[-0.5px] md:tracking-[-1.01px] text-center mb-8 md:mb-[72px]">
                       {review.title}

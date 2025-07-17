@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 
 export const HeroSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col items-center gap-12 py-10 w-full max-w-7xl mx-auto">
+    <section className="flex flex-col items-center gap-16 md:gap-20 py-16 md:py-24 lg:py-32 w-full max-w-7xl mx-auto">
       {/* Headline and Description */}
-      <div className="flex flex-col items-center justify-center gap-12 px-4 md:px-20 w-full">
+      <div className="flex flex-col items-center justify-center gap-16 md:gap-20 px-4 md:px-20 w-full">
         <h1 className="font-['Lora',Helvetica] font-bold text-[#235d25] text-4xl md:text-[65.1px] text-center tracking-tight leading-tight md:leading-[92px]">
           Clean. Effective. Market-Ready{" "}
           <span className="text-[#225d24]">
@@ -23,8 +23,8 @@ export const HeroSection = (): JSX.Element => {
       </div>
 
       {/* CTA Buttons */}
-      <div className="flex flex-col items-center gap-3.5 w-full">
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full">
+      <div className="flex flex-col items-center gap-6 md:gap-8 w-full">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-8 w-full">
           <Button className="w-[281px] h-[50px] bg-[#2b552c] hover:bg-[#1e3e1f] rounded-[26.85px] font-['Poppins',Helvetica] font-medium text-[17.9px]">
             Get Wholesale Quote
           </Button>
@@ -47,7 +47,7 @@ export const HeroSection = (): JSX.Element => {
       </div>
 
       {/* Social Proof */}
-      <div className="flex items-center justify-center gap-2.5 w-full">
+      <div className="flex items-center justify-center gap-2.5 w-full mt-8 md:mt-12">
         <div className="flex items-center gap-4">
           <div className="relative h-[39px] w-[136px]">
             <Avatar className="absolute w-[39px] h-[39px] top-0 left-0 border-2 border-white">

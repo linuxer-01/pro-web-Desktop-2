@@ -51,14 +51,14 @@ export const FooterSection = (): JSX.Element => {
   ];
 
   return (
-    <footer className="w-full bg-[#323232] py-6 md:py-9">
+    <footer className="w-full bg-[#323232] py-16 md:py-20 lg:py-24">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center gap-8 md:gap-[38px]">
+        <div className="flex flex-col items-center gap-16 md:gap-20 lg:gap-24">
           {/* Main footer content */}
-          <div className="flex flex-col lg:flex-row lg:justify-between w-full gap-8">
+          <div className="flex flex-col lg:flex-row lg:justify-between w-full gap-12 lg:gap-16">
             {/* Company info section */}
-            <div className="flex flex-col w-full lg:w-[530px] items-start gap-6 lg:gap-[27px]">
-              <div className="flex items-start gap-4 lg:gap-7">
+            <div className="flex flex-col w-full lg:w-[530px] items-start gap-8 lg:gap-[35px]">
+              <div className="flex items-start gap-6 lg:gap-8">
                 <img
                   className="w-16 h-16 lg:w-[83px] lg:h-[84.26px] object-cover"
                   alt="Logo placeholder"
@@ -74,7 +74,7 @@ export const FooterSection = (): JSX.Element => {
             </div>
 
             {/* Quick links section */}
-            <div className="flex flex-col w-full lg:w-[156px] items-start gap-2 lg:gap-[9px]">
+            <div className="flex flex-col w-full lg:w-[156px] items-start gap-4 lg:gap-[12px]">
               <h3 className="font-['Poppins',Helvetica] font-medium text-white text-xl md:text-2xl lg:text-3xl tracking-[-0.8px] lg:tracking-[-1.20px] leading-tight lg:leading-[50px]">
                 Quick Links
               </h3>
@@ -90,7 +90,7 @@ export const FooterSection = (): JSX.Element => {
             </div>
 
             {/* Contact info section */}
-            <div className="flex flex-col w-full lg:w-[333px] items-center gap-6 lg:gap-[43px]">
+            <div className="flex flex-col w-full lg:w-[333px] items-center gap-8 lg:gap-[50px]">
               <h3 className="font-['Poppins',Helvetica] font-medium text-white text-xl md:text-2xl lg:text-3xl text-center tracking-[-0.8px] lg:tracking-[-1.20px] leading-tight lg:leading-[50px] w-full">
                 Contact Info
               </h3>
@@ -98,7 +98,7 @@ export const FooterSection = (): JSX.Element => {
               {contactInfo.map((item, index) => (
                 <div
                   key={`contact-item-${index}`}
-                  className="flex items-start gap-4 lg:gap-8 w-full"
+                  className="flex items-start gap-6 lg:gap-10 w-full"
                 >
                   <img
                     className={`${item.iconWidth} ${item.iconHeight} object-cover`}
