@@ -45,10 +45,19 @@ export const PartnershipInquirySection = (): JSX.Element => {
   // Form submission mutation
   const submitPartnershipMutation = useMutation({
     mutationFn: async (data: PartnershipFormData) => {
-      return apiRequest("/api/partnership", {
+      const response = await fetch("/api/partnership", {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(data),
       });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      return response.json();
     },
     onSuccess: () => {
       toast({
