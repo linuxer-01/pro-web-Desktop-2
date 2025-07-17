@@ -39,7 +39,7 @@ export const ServicesOverviewSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col items-center gap-16 md:gap-20 lg:gap-24 w-full max-w-[1303px] px-4 md:px-8 py-16 md:py-20 lg:py-24">
+    <section id="services" className="flex flex-col items-center gap-16 md:gap-20 lg:gap-24 w-full max-w-[1303px] px-4 md:px-8 py-16 md:py-20 lg:py-24">
       <div className="flex flex-col items-center gap-8 md:gap-10 lg:gap-12 w-full max-w-[968px]">
         <h2 className="w-full font-['Poppins',Helvetica] font-semibold text-[#083d0e] text-3xl md:text-5xl lg:text-[86.2px] text-center tracking-[-2px] md:tracking-[-3.45px] leading-tight md:leading-[150.8px]">
           Services we provide

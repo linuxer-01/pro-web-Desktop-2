@@ -19,7 +19,7 @@ export const ProductsOverviewSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col items-center gap-16 md:gap-20 lg:gap-24 w-full px-4 md:px-0 py-16 md:py-20 lg:py-24">
+    <section id="products" className="flex flex-col items-center gap-16 md:gap-20 lg:gap-24 w-full px-4 md:px-0 py-16 md:py-20 lg:py-24">
       <h2 className="w-full font-['Poppins',Helvetica] font-semibold text-[#323232] text-3xl md:text-5xl lg:text-[66.8px] text-center tracking-[-1.5px] md:tracking-[-2.67px] leading-tight md:leading-[153.0px]">
         Our Products
       </h2>

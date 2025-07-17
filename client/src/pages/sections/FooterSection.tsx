@@ -51,7 +51,7 @@ export const FooterSection = (): JSX.Element => {
   ];
 
   return (
-    <footer className="w-full bg-[#323232] py-16 md:py-20 lg:py-24">
+    <footer id="contact" className="w-full bg-[#323232] py-16 md:py-20 lg:py-24">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center gap-16 md:gap-20 lg:gap-24">
           {/* Main footer content */}

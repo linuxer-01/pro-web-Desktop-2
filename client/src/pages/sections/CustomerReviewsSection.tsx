@@ -31,7 +31,7 @@ export const CustomerReviewsSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="w-full bg-[#323232] py-16 md:py-20 lg:py-24">
+    <section id="reviews" className="w-full bg-[#323232] py-16 md:py-20 lg:py-24">
       <div className="container mx-auto px-4 flex flex-col gap-16 md:gap-20 lg:gap-24">
         {/* Section Header */}
         <div className="flex flex-col gap-4 md:gap-6 lg:gap-8">

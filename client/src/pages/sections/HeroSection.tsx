@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export const HeroSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col items-center gap-16 md:gap-20 py-16 md:py-24 lg:py-32 w-full max-w-7xl mx-auto">
+    <section id="hero" className="flex flex-col items-center gap-16 md:gap-20 py-16 md:py-24 lg:py-32 w-full max-w-7xl mx-auto">
       {/* Headline and Description */}
       <div className="flex flex-col items-center justify-center gap-16 md:gap-20 px-4 md:px-20 w-full">
         <h1 className="font-['Lora',Helvetica] font-bold text-[#235d25] text-4xl md:text-[65.1px] text-center tracking-tight leading-tight md:leading-[92px]">

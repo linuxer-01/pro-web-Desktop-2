@@ -81,7 +81,7 @@ export const PartnershipInquirySection = (): JSX.Element => {
   ];
 
   return (
-    <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-[120px] px-4 md:px-8 py-16 md:py-20 lg:py-24">
+    <section id="partnership" className="flex flex-col lg:flex-row items-start gap-12 lg:gap-[120px] px-4 md:px-8 py-16 md:py-20 lg:py-24">
       {/* Left Column - Process and Contact */}
       <div className="flex flex-col w-full lg:w-[475px] items-start gap-12 lg:gap-[100px]">
         {/* Partnership Process Section */}
@@ -236,6 +236,6 @@ export const PartnershipInquirySection = (): JSX.Element => {
           </div>
         </CardContent>
       </Card>
-    </div>
+    </section>
   );
 };
