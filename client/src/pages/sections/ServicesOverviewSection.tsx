@@ -54,13 +54,8 @@ export const ServicesOverviewSection = (): JSX.Element => {
         <h2 className="w-full font-['Poppins',Helvetica] font-semibold text-[#083d0e] text-3xl md:text-5xl lg:text-[86.2px] text-center tracking-[-2px] md:tracking-[-3.45px] leading-tight md:leading-[150.8px]">
           Services we provide
         </h2>
-        <p className="w-full opacity-80 font-['Poppins',Helvetica] font-semibold text-black text-lg md:text-xl lg:text-[27.1px] text-center tracking-[-0.5px] md:tracking-[-1.08px] leading-relaxed md:leading-[47.4px]">
-          We provide the services that you consider as a services and we spent s
-          lot of time to design this website.So please consider our efforts and
-          hit the CTA button
-        </p>
+        <p className="w-full opacity-80 font-['Poppins',Helvetica] font-semibold text-black text-lg md:text-xl lg:text-[27.1px] text-center tracking-[-0.5px] md:tracking-[-1.08px] leading-relaxed md:leading-[47.4px]">Empowering health brands with state-of-the-art manufacturing capabilities, certified quality processes, and flexible solutions tailored to your business needs.</p>
       </div>
-
       <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-4 w-full">
         {services.map((service, index) => (
           <Card
