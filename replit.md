@@ -29,6 +29,7 @@ This project is being migrated from Figma to Replit environment. The migration p
 - Moved contact details above partnership form with enhanced card design - July 17, 2025
 - Fixed layout overlaps, overflows, and optimized spacing for professional landing page design - July 17, 2025
 - Integrated Google Sheets for partnership inquiry collection, removed business type and message fields - July 17, 2025
+- Added PDF catalog download functionality to "Download catalog" button in hero section - July 17, 2025
 
 ## User Preferences
 - Non-technical user who prefers simple, everyday language

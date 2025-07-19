@@ -16,6 +16,16 @@ export const HeroSection = (): JSX.Element => {
     }
   };
 
+  // Download catalog function
+  const downloadCatalog = () => {
+    const link = document.createElement('a');
+    link.href = '/figmaAssets/nutrazs-catalog.pdf';
+    link.download = 'Nutrazs-Product-Catalog.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="hero" className="flex flex-col items-center gap-16 md:gap-20 py-16 md:py-24 lg:py-32 w-full max-w-7xl mx-auto">
       {/* Headline and Description */}
@@ -46,7 +56,8 @@ export const HeroSection = (): JSX.Element => {
 
           <Button
             variant="outline"
-            className="w-[237px] h-[50px] rounded-[26.85px] border-[#0b3c0f] font-['Poppins',Helvetica] font-medium text-[#085308] text-[17.9px]"
+            onClick={downloadCatalog}
+            className="w-[237px] h-[50px] rounded-[26.85px] border-[#0b3c0f] font-['Poppins',Helvetica] font-medium text-[#085308] text-[17.9px] cursor-pointer hover:bg-green-50"
           >
             Download catalog
           </Button>
