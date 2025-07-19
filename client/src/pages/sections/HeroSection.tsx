@@ -4,6 +4,18 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 export const HeroSection = (): JSX.Element => {
+  // Smooth scroll function
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      });
+    }
+  };
+
   return (
     <section id="hero" className="flex flex-col items-center gap-16 md:gap-20 py-16 md:py-24 lg:py-32 w-full max-w-7xl mx-auto">
       {/* Headline and Description */}
@@ -25,7 +37,10 @@ export const HeroSection = (): JSX.Element => {
       {/* CTA Buttons */}
       <div className="flex flex-col items-center gap-6 md:gap-8 w-full">
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-8 w-full">
-          <Button className="w-[281px] h-[50px] bg-[#2b552c] hover:bg-[#1e3e1f] rounded-[26.85px] font-['Poppins',Helvetica] font-medium text-[17.9px]">
+          <Button 
+            onClick={() => scrollToSection('#partnership')}
+            className="w-[281px] h-[50px] bg-[#2b552c] hover:bg-[#1e3e1f] rounded-[26.85px] font-['Poppins',Helvetica] font-medium text-[17.9px] cursor-pointer"
+          >
             Get Wholesale Quote
           </Button>
 
