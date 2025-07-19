@@ -7,8 +7,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import { OptimizedImage } from "@/components/OptimizedImage";
-import { throttle } from "@/utils/performance";
 
 export const NavBarSection = (): JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,8 +20,8 @@ export const NavBarSection = (): JSX.Element => {
     { name: "Contact", href: "#contact" },
   ];
 
-  // Smooth scroll function with throttling for performance
-  const scrollToSection = throttle((href: string) => {
+  // Smooth scroll function
+  const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ 
@@ -33,7 +31,7 @@ export const NavBarSection = (): JSX.Element => {
       });
     }
     setIsMenuOpen(false);
-  }, 100);
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
@@ -41,11 +39,10 @@ export const NavBarSection = (): JSX.Element => {
         <div className="flex items-center justify-between w-full max-w-[1440px]">
         {/* Logo section */}
         <div className="flex items-center h-[45.09px]">
-          <OptimizedImage
+          <img
             className="w-8 h-8 md:w-[47px] md:h-10 object-cover"
             alt="Logo"
             src="/figmaAssets/logo.png"
-            priority={true}
           />
           <h1 className="ml-2 md:ml-[11px] font-['Poppins',Helvetica] font-semibold text-black text-xl md:text-[35px]">
             NUTRAZS

@@ -1,21 +1,11 @@
-import React, { Suspense } from "react";
-import { NavBarSection } from "./sections/NavBarSection";
+import React from "react";
+import { CustomerReviewsSection } from "./sections/CustomerReviewsSection";
+import { FooterSection } from "./sections/FooterSection";
 import { HeroSection } from "./sections/HeroSection";
-import { LazySection } from "@/components/LazySection";
-import { OptimizedImage } from "@/components/OptimizedImage";
-import { 
-  ReviewsSkeleton, 
-  ProductsSkeleton, 
-  PartnershipSkeleton, 
-  FooterSkeleton 
-} from "@/components/ui/optimized-skeleton";
-
-// Lazy load heavy components
-const CustomerReviewsSection = React.lazy(() => import("./sections/CustomerReviewsSection").then(m => ({ default: m.CustomerReviewsSection })));
-const FooterSection = React.lazy(() => import("./sections/FooterSection").then(m => ({ default: m.FooterSection })));
-const PartnershipInquirySection = React.lazy(() => import("./sections/PartnershipInquirySection").then(m => ({ default: m.PartnershipInquirySection })));
-const ProductsOverviewSection = React.lazy(() => import("./sections/ProductsOverviewSection").then(m => ({ default: m.ProductsOverviewSection })));
-const ServicesOverviewSection = React.lazy(() => import("./sections/ServicesOverviewSection").then(m => ({ default: m.ServicesOverviewSection })));
+import { NavBarSection } from "./sections/NavBarSection";
+import { PartnershipInquirySection } from "./sections/PartnershipInquirySection";
+import { ProductsOverviewSection } from "./sections/ProductsOverviewSection";
+import { ServicesOverviewSection } from "./sections/ServicesOverviewSection";
 
 export const Desktop = (): JSX.Element => {
   // Certification data for mapping
@@ -54,52 +44,22 @@ export const Desktop = (): JSX.Element => {
 
           <div className="flex flex-row items-center justify-center gap-8 md:gap-12 lg:gap-16 xl:gap-[120px] flex-1">
             {certifications.map((cert, index) => (
-              <OptimizedImage
+              <img
                 key={index}
                 className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-20 lg:h-20 xl:w-24 xl:h-24 object-cover"
                 alt={cert.alt}
                 src={cert.src}
-                priority={false}
               />
             ))}
           </div>
         </div>
       </section>
 
-      <LazySection 
-        fallback={<div className="w-full h-64 bg-gray-50 animate-pulse" />}
-        rootMargin="200px"
-      >
-        <ServicesOverviewSection />
-      </LazySection>
-      
-      <LazySection 
-        fallback={<ReviewsSkeleton />}
-        rootMargin="200px"
-      >
-        <CustomerReviewsSection />
-      </LazySection>
-      
-      <LazySection 
-        fallback={<ProductsSkeleton />}
-        rootMargin="200px"
-      >
-        <ProductsOverviewSection />
-      </LazySection>
-      
-      <LazySection 
-        fallback={<PartnershipSkeleton />}
-        rootMargin="200px"
-      >
-        <PartnershipInquirySection />
-      </LazySection>
-      
-      <LazySection 
-        fallback={<FooterSkeleton />}
-        rootMargin="200px"
-      >
-        <FooterSection />
-      </LazySection>
+      <ServicesOverviewSection />
+      <CustomerReviewsSection />
+      <ProductsOverviewSection />
+      <PartnershipInquirySection />
+      <FooterSection />
 
 
     </div>

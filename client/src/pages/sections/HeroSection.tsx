@@ -2,11 +2,10 @@ import React from "react";
 import { Avatar } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { OptimizedImage } from "@/components/OptimizedImage";
 
 export const HeroSection = (): JSX.Element => {
   return (
-    <section id="hero" className="flex flex-col items-center gap-16 md:gap-20 py-16 md:py-24 lg:py-32 w-full max-w-7xl mx-auto animate-fade-in">
+    <section id="hero" className="flex flex-col items-center gap-16 md:gap-20 py-16 md:py-24 lg:py-32 w-full max-w-7xl mx-auto">
       {/* Headline and Description */}
       <div className="flex flex-col items-center justify-center gap-16 md:gap-20 px-4 md:px-20 w-full">
         <h1 className="font-['Lora',Helvetica] font-bold text-[#235d25] text-4xl md:text-[65.1px] text-center tracking-tight leading-tight md:leading-[92px]">
@@ -52,38 +51,34 @@ export const HeroSection = (): JSX.Element => {
         <div className="flex items-center gap-4">
           <div className="relative h-[39px] w-[136px]">
             <Avatar className="absolute w-[39px] h-[39px] top-0 left-0 border-2 border-white">
-              <OptimizedImage
+              <img
                 className="object-cover"
                 alt="Person"
                 src="/figmaAssets/person1.png"
-                priority={true}
               />
             </Avatar>
 
             <Avatar className="absolute w-[39px] h-[39px] top-0 left-[26px] border-2 border-white">
-              <OptimizedImage
+              <img
                 className="object-cover"
                 alt="Person"
                 src="/figmaAssets/person2.png"
-                priority={true}
               />
             </Avatar>
 
             <Avatar className="absolute w-[39px] h-[39px] top-0 left-[57px] border-2 border-white">
-              <OptimizedImage
+              <img
                 className="object-cover"
                 alt="Person"
                 src="/figmaAssets/person3.png"
-                priority={true}
               />
             </Avatar>
 
             <Avatar className="absolute w-[39px] h-[39px] top-0 left-20 border-2 border-white">
-              <OptimizedImage
+              <img
                 className="object-cover"
                 alt="Person"
                 src="/figmaAssets/person4.png"
-                priority={true}
               />
             </Avatar>
 
@@ -98,11 +93,10 @@ export const HeroSection = (): JSX.Element => {
             <span className="font-['Poppins',Helvetica] font-normal text-black text-[12.7px]">
               Trusted By People
             </span>
-            <OptimizedImage
+            <img
               className="w-[129px] h-6"
               alt="Five star rating"
               src="/figmaAssets/fivestar.svg"
-              priority={true}
             />
           </div>
         </div>
