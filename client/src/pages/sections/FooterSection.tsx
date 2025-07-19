@@ -2,17 +2,29 @@ import React from "react";
 import { Separator } from "@/components/ui/separator";
 
 export const FooterSection = (): JSX.Element => {
+  // Smooth scroll function
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      });
+    }
+  };
+
   // Company description data
   const companyDescription =
     "Your trusted partner for high-quality supplement manufacturing. We help brands create exceptional products with our state-of-the-art facilities and expert team.";
 
-  // Quick links data
+  // Quick links data with navigation
   const quickLinks = [
-    "Quick Links",
-    "Services",
-    "About Us",
-    "Get Quote",
-    "Privacy Policy",
+    { name: "Home", href: "#hero" },
+    { name: "Services", href: "#services" },
+    { name: "Products", href: "#products" },
+    { name: "Reviews", href: "#reviews" },
+    { name: "Contact", href: "#contact" },
   ];
 
   // Contact info data
@@ -79,13 +91,13 @@ export const FooterSection = (): JSX.Element => {
                 Quick Links
               </h3>
               {quickLinks.map((link, index) => (
-                <a
+                <button
                   key={`quick-link-${index}`}
-                  href="#"
-                  className="font-['Poppins',Helvetica] font-light text-white text-base md:text-lg lg:text-[22px] tracking-[-0.4px] lg:tracking-[-0.88px] leading-relaxed lg:leading-[50px] hover:underline"
+                  onClick={() => scrollToSection(link.href)}
+                  className="font-['Poppins',Helvetica] font-light text-white text-base md:text-lg lg:text-[22px] tracking-[-0.4px] lg:tracking-[-0.88px] leading-relaxed lg:leading-[50px] hover:underline cursor-pointer text-left transition-colors hover:text-green-400"
                 >
-                  {link}
-                </a>
+                  {link.name}
+                </button>
               ))}
             </div>
 
