@@ -3,6 +3,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 export const ServicesOverviewSection = (): JSX.Element => {
+  // Download catalog function
+  const downloadCatalog = () => {
+    const link = document.createElement('a');
+    link.href = '/figmaAssets/nutrazs-catalog.pdf';
+    link.download = 'Nutrazs-Product-Catalog.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const services = [
     {
       title: "Contract Manufacturing",
@@ -67,7 +77,10 @@ export const ServicesOverviewSection = (): JSX.Element => {
                   {service.description}
                 </p>
                 {service.hasButton && (
-                  <Button className="w-auto lg:w-[205px] h-[46px] bg-[#d9d9d9] rounded-[22.78px] text-black font-['Poppins',Helvetica] font-bold text-sm md:text-[16.6px] leading-[29.5px] mt-[22px] hover:bg-[#c0c0c0]">
+                  <Button 
+                    onClick={downloadCatalog}
+                    className="w-auto lg:w-[205px] h-[46px] bg-[#d9d9d9] rounded-[22.78px] text-black font-['Poppins',Helvetica] font-bold text-sm md:text-[16.6px] leading-[29.5px] mt-[22px] hover:bg-[#c0c0c0] cursor-pointer"
+                  >
                     Download Catalog
                   </Button>
                 )}
