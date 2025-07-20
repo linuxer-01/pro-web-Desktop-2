@@ -9,29 +9,90 @@ import {
 } from "@/components/ui/carousel";
 
 export const CustomerReviewsSection = (): JSX.Element => {
-  // Doctor reviews data - only two cards as requested
+  // All reviews data - doctors, third party, pharmacy, and distributor
   const reviews = [
+    // Doctor Reviews
     {
       title: "Doctor's Review",
       quote:
-        '"NUTRAZS supplements meet the highest quality standards. I confidently recommend them to my patients for their nutritional needs."',
-      author: "Dr. Rajesh Kumar",
-      qualification: "MBBS, MD - Internal Medicine",
-      hospital: "Apollo Hospitals, Chennai",
-      locationLink: "#",
+        '"NUTRAZS has proven highly effective in my practice with excellent patient satisfaction and outstanding packaging quality. I have complete trust in the brand and would definitely recommend it to my peers."',
+      author: "Dr.Ayyanar",
+      qualification: "b.sc,DNYS,D.ACU, Abundent cases - specialization",
+      hospital: "Arokiyam Hospitals, Panruti",
+      locationLink: "",
       photo: "/figmaAssets/photo-2.png",
       rating: "/figmaAssets/mask-group.png",
+      type: "doctor",
     },
     {
       title: "Doctor's Review",
       quote:
         '"The consistent quality and purity of NUTRAZS products make them my preferred choice for patient recommendations."',
-      author: "Dr. Priya Sharma",
-      qualification: "MBBS, MD - Nutrition & Dietetics",
-      hospital: "Fortis Healthcare, Bangalore",
+      author: "Dr.Sennilavan",
+      qualification: "MD - phy & specialization in DIAB",
+      hospital: "R.S Hospital",
       locationLink: "#",
       photo: "/figmaAssets/photo-2.png",
       rating: "/figmaAssets/mask-group-1.png",
+      type: "doctor",
+    },
+    // Third Party Reviews
+    {
+      title: "Third Party Review",
+      quote:
+        '"NUTRAZS has consistently delivered quality products. Their GMP certification and testing standards ensure reliability for our customers."',
+      author: "Quality Assurance Lab",
+      company: "Certified Testing Services",
+      location: "Mumbai",
+      photo: "/figmaAssets/photo-2.png",
+      rating: "/figmaAssets/mask-group.png",
+      type: "thirdparty",
+    },
+    {
+      title: "Third Party Review",
+      quote:
+        '"Outstanding manufacturing standards. NUTRAZS maintains excellent batch consistency and documentation for all their supplement lines."',
+      author: "ISO Certification Board",
+      company: "International Standards Authority",
+      location: "New Delhi",
+      photo: "/figmaAssets/photo-2.png",
+      rating: "/figmaAssets/mask-group-2.png",
+      type: "thirdparty",
+    },
+    // Pharmacy Reviews
+    {
+      title: "Pharmacy Review",
+      quote:
+        '"Our customers trust NUTRAZS products. The brand recognition and quality assurance make them our top-selling supplements."',
+      author: "MedPlus Pharmacy Chain",
+      branch: "Regional Head - South India",
+      stores: "450+ Stores",
+      photo: "/figmaAssets/photo-2.png",
+      rating: "/figmaAssets/mask-group-1.png",
+      type: "pharmacy",
+    },
+    {
+      title: "Pharmacy Review",
+      quote:
+        '"NUTRAZS products have excellent shelf life and packaging. Customer satisfaction rates are consistently high across all locations."',
+      author: "Apollo Pharmacy",
+      branch: "Purchase Manager",
+      stores: "5000+ Outlets Nationwide",
+      photo: "/figmaAssets/photo-2.png",
+      rating: "/figmaAssets/mask-group.png",
+      type: "pharmacy",
+    },
+    // Distributor Review
+    {
+      title: "Distributor Review",
+      quote:
+        '"Partnering with NUTRAZS has been excellent. Their supply chain efficiency, product range, and support make distribution seamless across regions."',
+      author: "HealthCare Distributors",
+      role: "National Distribution Head",
+      coverage: "Pan India Coverage",
+      photo: "/figmaAssets/photo-2.png",
+      rating: "/figmaAssets/mask-group-2.png",
+      type: "distributor",
     },
   ];
 
@@ -78,38 +139,135 @@ export const CustomerReviewsSection = (): JSX.Element => {
                       </div>
 
                       <div className="space-y-4">
-                        <div className="flex items-start justify-between gap-4">
-                          <div className="flex-1">
-                            <h5 className="font-['Poppins',Helvetica] font-semibold text-[#262525] text-sm md:text-base lg:text-lg tracking-[-0.3px]">
-                              {review.author}
-                            </h5>
-                            <p className="font-['Poppins',Helvetica] font-normal text-[#666] text-xs md:text-sm tracking-[-0.2px] mt-1">
-                              {review.qualification}
-                            </p>
-                            <p className="font-['Poppins',Helvetica] font-medium text-[#4c4c4c] text-xs md:text-sm tracking-[-0.2px] mt-1">
-                              {review.hospital}
-                            </p>
-                          </div>
-                          <img
-                            className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-cover rounded-full border-2 border-gray-200"
-                            alt="Doctor photo"
-                            src={review.photo}
-                          />
-                        </div>
-                        
-                        <div className="flex items-center justify-between">
-                          <a 
-                            href={review.locationLink}
-                            className="font-['Poppins',Helvetica] font-normal text-[#2b552c] text-xs md:text-sm tracking-[-0.2px] hover:underline cursor-pointer flex items-center gap-1"
-                          >
-                            📍 location of doctor
-                          </a>
-                          <img
-                            className="w-16 h-3 md:w-20 md:h-4 lg:w-24 lg:h-4"
-                            alt="Rating stars"
-                            src={review.rating}
-                          />
-                        </div>
+                        {/* Doctor Review Layout */}
+                        {review.type === "doctor" && (
+                          <>
+                            <div className="flex items-start justify-between gap-4">
+                              <div className="flex-1">
+                                <h5 className="font-['Poppins',Helvetica] font-semibold text-[#262525] text-sm md:text-base lg:text-lg tracking-[-0.3px]">
+                                  {review.author}
+                                </h5>
+                                <p className="font-['Poppins',Helvetica] font-normal text-[#666] text-xs md:text-sm tracking-[-0.2px] mt-1">
+                                  {review.qualification}
+                                </p>
+                                <p className="font-['Poppins',Helvetica] font-medium text-[#4c4c4c] text-xs md:text-sm tracking-[-0.2px] mt-1">
+                                  {review.hospital}
+                                </p>
+                              </div>
+                              <img
+                                className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-cover rounded-full border-2 border-gray-200"
+                                alt="Doctor photo"
+                                src={review.photo}
+                              />
+                            </div>
+                            <div className="flex items-center justify-between">
+                              <a 
+                                href={review.locationLink}
+                                className="font-['Poppins',Helvetica] font-normal text-[#2b552c] text-xs md:text-sm tracking-[-0.2px] hover:underline cursor-pointer flex items-center gap-1"
+                              >
+                                📍 location of doctor
+                              </a>
+                              <img
+                                className="w-16 h-3 md:w-20 md:h-4 lg:w-24 lg:h-4"
+                                alt="Rating stars"
+                                src={review.rating}
+                              />
+                            </div>
+                          </>
+                        )}
+
+                        {/* Third Party Review Layout */}
+                        {review.type === "thirdparty" && (
+                          <>
+                            <div className="flex items-start justify-between gap-4">
+                              <div className="flex-1">
+                                <h5 className="font-['Poppins',Helvetica] font-semibold text-[#262525] text-sm md:text-base lg:text-lg tracking-[-0.3px]">
+                                  {review.author}
+                                </h5>
+                                <p className="font-['Poppins',Helvetica] font-normal text-[#666] text-xs md:text-sm tracking-[-0.2px] mt-1">
+                                  {review.company}
+                                </p>
+                                <p className="font-['Poppins',Helvetica] font-medium text-[#4c4c4c] text-xs md:text-sm tracking-[-0.2px] mt-1">
+                                  📍 {review.location}
+                                </p>
+                              </div>
+                              <img
+                                className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-cover rounded-full border-2 border-gray-200"
+                                alt="Organization photo"
+                                src={review.photo}
+                              />
+                            </div>
+                            <div className="flex justify-end">
+                              <img
+                                className="w-16 h-3 md:w-20 md:h-4 lg:w-24 lg:h-4"
+                                alt="Rating stars"
+                                src={review.rating}
+                              />
+                            </div>
+                          </>
+                        )}
+
+                        {/* Pharmacy Review Layout */}
+                        {review.type === "pharmacy" && (
+                          <>
+                            <div className="flex items-start justify-between gap-4">
+                              <div className="flex-1">
+                                <h5 className="font-['Poppins',Helvetica] font-semibold text-[#262525] text-sm md:text-base lg:text-lg tracking-[-0.3px]">
+                                  {review.author}
+                                </h5>
+                                <p className="font-['Poppins',Helvetica] font-normal text-[#666] text-xs md:text-sm tracking-[-0.2px] mt-1">
+                                  {review.branch}
+                                </p>
+                                <p className="font-['Poppins',Helvetica] font-medium text-[#2b552c] text-xs md:text-sm tracking-[-0.2px] mt-1">
+                                  🏪 {review.stores}
+                                </p>
+                              </div>
+                              <img
+                                className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-cover rounded-full border-2 border-gray-200"
+                                alt="Pharmacy logo"
+                                src={review.photo}
+                              />
+                            </div>
+                            <div className="flex justify-end">
+                              <img
+                                className="w-16 h-3 md:w-20 md:h-4 lg:w-24 lg:h-4"
+                                alt="Rating stars"
+                                src={review.rating}
+                              />
+                            </div>
+                          </>
+                        )}
+
+                        {/* Distributor Review Layout */}
+                        {review.type === "distributor" && (
+                          <>
+                            <div className="flex items-start justify-between gap-4">
+                              <div className="flex-1">
+                                <h5 className="font-['Poppins',Helvetica] font-semibold text-[#262525] text-sm md:text-base lg:text-lg tracking-[-0.3px]">
+                                  {review.author}
+                                </h5>
+                                <p className="font-['Poppins',Helvetica] font-normal text-[#666] text-xs md:text-sm tracking-[-0.2px] mt-1">
+                                  {review.role}
+                                </p>
+                                <p className="font-['Poppins',Helvetica] font-medium text-[#2b552c] text-xs md:text-sm tracking-[-0.2px] mt-1">
+                                  🚚 {review.coverage}
+                                </p>
+                              </div>
+                              <img
+                                className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-cover rounded-full border-2 border-gray-200"
+                                alt="Distributor logo"
+                                src={review.photo}
+                              />
+                            </div>
+                            <div className="flex justify-end">
+                              <img
+                                className="w-16 h-3 md:w-20 md:h-4 lg:w-24 lg:h-4"
+                                alt="Rating stars"
+                                src={review.rating}
+                              />
+                            </div>
+                          </>
+                        )}
                       </div>
                     </div>
                   </CardContent>
