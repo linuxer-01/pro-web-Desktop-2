@@ -15,8 +15,9 @@ export const CustomerReviewsSection = (): JSX.Element => {
       title: "Doctor's Review",
       quote:
         '"NUTRAZS supplements meet the highest quality standards. I confidently recommend them to my patients for their nutritional needs."',
-      author: "MD, General Medicine",
+      author: "Dr. Rajesh Kumar",
       qualification: "MBBS, MD - Internal Medicine",
+      hospital: "Apollo Hospitals, Chennai",
       locationLink: "#",
       photo: "/figmaAssets/photo-2.png",
       rating: "/figmaAssets/mask-group.png",
@@ -25,8 +26,9 @@ export const CustomerReviewsSection = (): JSX.Element => {
       title: "Doctor's Review",
       quote:
         '"The consistent quality and purity of NUTRAZS products make them my preferred choice for patient recommendations."',
-      author: "MD, Nutritionist",
+      author: "Dr. Priya Sharma",
       qualification: "MBBS, MD - Nutrition & Dietetics",
+      hospital: "Fortis Healthcare, Bangalore",
       locationLink: "#",
       photo: "/figmaAssets/photo-2.png",
       rating: "/figmaAssets/mask-group-1.png",
@@ -75,31 +77,39 @@ export const CustomerReviewsSection = (): JSX.Element => {
                         </p>
                       </div>
 
-                      <div className="flex items-center justify-between mt-auto">
-                        <div className="flex flex-col gap-2">
-                          <span className="font-['Poppins',Helvetica] font-medium text-[#4c4c4c] text-xs md:text-sm lg:text-base tracking-[-0.3px]">
-                            {review.author}
-                          </span>
-                          <span className="font-['Poppins',Helvetica] font-normal text-[#666] text-xs md:text-sm tracking-[-0.2px]">
-                            {review.qualification}
-                          </span>
+                      <div className="space-y-4">
+                        <div className="flex items-start justify-between gap-4">
+                          <div className="flex-1">
+                            <h5 className="font-['Poppins',Helvetica] font-semibold text-[#262525] text-sm md:text-base lg:text-lg tracking-[-0.3px]">
+                              {review.author}
+                            </h5>
+                            <p className="font-['Poppins',Helvetica] font-normal text-[#666] text-xs md:text-sm tracking-[-0.2px] mt-1">
+                              {review.qualification}
+                            </p>
+                            <p className="font-['Poppins',Helvetica] font-medium text-[#4c4c4c] text-xs md:text-sm tracking-[-0.2px] mt-1">
+                              {review.hospital}
+                            </p>
+                          </div>
+                          <img
+                            className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-cover rounded-full border-2 border-gray-200"
+                            alt="Doctor photo"
+                            src={review.photo}
+                          />
+                        </div>
+                        
+                        <div className="flex items-center justify-between">
                           <a 
                             href={review.locationLink}
-                            className="font-['Poppins',Helvetica] font-normal text-[#2b552c] text-xs md:text-sm tracking-[-0.2px] hover:underline cursor-pointer"
+                            className="font-['Poppins',Helvetica] font-normal text-[#2b552c] text-xs md:text-sm tracking-[-0.2px] hover:underline cursor-pointer flex items-center gap-1"
                           >
-                            location of doctor
+                            📍 location of doctor
                           </a>
                           <img
-                            className="w-16 h-3 md:w-20 md:h-4 lg:w-24 lg:h-4 mt-2"
+                            className="w-16 h-3 md:w-20 md:h-4 lg:w-24 lg:h-4"
                             alt="Rating stars"
                             src={review.rating}
                           />
                         </div>
-                        <img
-                          className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 object-cover rounded-full"
-                          alt="Doctor photo"
-                          src={review.photo}
-                        />
                       </div>
                     </div>
                   </CardContent>
