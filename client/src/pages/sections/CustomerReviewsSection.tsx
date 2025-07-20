@@ -145,11 +145,6 @@ export const CustomerReviewsSection = (): JSX.Element => {
                                   {review.hospital}
                                 </p>
                               </div>
-                              <img
-                                className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-cover rounded-full border-2 border-gray-200"
-                                alt="Doctor photo"
-                                src={review.photo}
-                              />
                             </div>
                             <div className="flex items-center justify-between">
                               <a
@@ -182,11 +177,6 @@ export const CustomerReviewsSection = (): JSX.Element => {
                                   📍 {review.location}
                                 </p>
                               </div>
-                              <img
-                                className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-cover rounded-full border-2 border-gray-200"
-                                alt="Organization photo"
-                                src={review.photo}
-                              />
                             </div>
                             <div className="flex justify-end">
                               <img
@@ -213,11 +203,6 @@ export const CustomerReviewsSection = (): JSX.Element => {
                                   🏪 {review.stores}
                                 </p>
                               </div>
-                              <img
-                                className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-cover rounded-full border-2 border-gray-200"
-                                alt="Pharmacy logo"
-                                src={review.photo}
-                              />
                             </div>
                             <div className="flex justify-end">
                               <img
@@ -244,11 +229,6 @@ export const CustomerReviewsSection = (): JSX.Element => {
                                   🚚 {review.coverage}
                                 </p>
                               </div>
-                              <img
-                                className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-cover rounded-full border-2 border-gray-200"
-                                alt="Distributor logo"
-                                src={review.photo}
-                              />
                             </div>
                             <div className="flex justify-end">
                               <img
