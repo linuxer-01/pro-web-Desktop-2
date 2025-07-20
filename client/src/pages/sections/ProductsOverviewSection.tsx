@@ -1,5 +1,7 @@
 import React from "react";
 import { Card } from "@/components/ui/card";
+import proteinPowderImage from "@assets/protein powder _1753007900833.png";
+import capsulesImage from "@assets/capsules _1753007900835.png";
 
 export const ProductsOverviewSection = (): JSX.Element => {
   // Product data for easier maintenance and mapping
@@ -9,12 +11,16 @@ export const ProductsOverviewSection = (): JSX.Element => {
       description:
         "High-quality protein powder in delicious flavour made to match your goals.",
       imagePosition: "left",
+      image: proteinPowderImage,
+      alt: "NUTRAZS Protein Powder Collection - Various flavors including NRG PRO, PRO D, PRO WALK, and PRO PERG supplements",
     },
     {
       title: "Capsules",
       description:
         "Targeted wellness capsules Each one designed for specific need.",
       imagePosition: "right",
+      image: capsulesImage,
+      alt: "NUTRAZS Capsule Collection - Healthcare supplements including Grapicur, Enjom, ZECARTIP, Om369, Mavitz, BCOMPZ, CARDIFERT, LACOL-M, Unicorn Night, and Skelcare",
     },
   ];
 
@@ -28,7 +34,13 @@ export const ProductsOverviewSection = (): JSX.Element => {
         <div className="flex flex-col gap-16 md:gap-20 lg:gap-24 max-w-[1189px] mx-auto">
           {/* First product - Protein powders */}
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-[178px] w-full">
-            <Card className="w-full max-w-md lg:w-[548.1px] h-[200px] md:h-[280px] lg:h-[346.33px] rounded-[5.5px] border-[1.1px] border-solid border-black bg-white order-2 lg:order-1" />
+            <Card className="w-full max-w-md lg:w-[548.1px] h-[200px] md:h-[280px] lg:h-[346.33px] rounded-[5.5px] border-[1.1px] border-solid border-black bg-white order-2 lg:order-1 overflow-hidden">
+              <img
+                src={products[0].image}
+                alt={products[0].alt}
+                className="w-full h-full object-cover"
+              />
+            </Card>
 
             <div className="flex flex-col w-full lg:w-[458px] items-center lg:items-end gap-6 md:gap-8 order-1 lg:order-2">
               <h3 className="w-full font-['Poppins',Helvetica] font-semibold text-white text-2xl md:text-3xl lg:text-[58.6px] text-center lg:text-right tracking-[-1px] lg:tracking-[-2.34px] leading-tight lg:leading-[83.7px]">
@@ -51,7 +63,13 @@ export const ProductsOverviewSection = (): JSX.Element => {
               </p>
             </div>
 
-            <Card className="w-full max-w-md lg:w-[548.1px] h-[200px] md:h-[280px] lg:h-[346.33px] rounded-[5.5px] border-[1.1px] border-solid border-black bg-white order-2" />
+            <Card className="w-full max-w-md lg:w-[548.1px] h-[200px] md:h-[280px] lg:h-[346.33px] rounded-[5.5px] border-[1.1px] border-solid border-black bg-white order-2 overflow-hidden">
+              <img
+                src={products[1].image}
+                alt={products[1].alt}
+                className="w-full h-full object-cover"
+              />
+            </Card>
           </div>
         </div>
       </div>
