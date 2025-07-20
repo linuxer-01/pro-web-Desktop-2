@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -6,10 +6,22 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  CarouselApi,
 } from "@/components/ui/carousel";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export const CustomerReviewsSection = (): JSX.Element => {
+  const [api, setApi] = React.useState<CarouselApi>();
+
+  useEffect(() => {
+    if (!api) return;
+
+    const intervalId = setInterval(() => {
+      api.scrollNext();
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, [api]);
   // All reviews data - doctors, third party, pharmacy, and distributor
   const reviews = [
     // Doctor Reviews
@@ -61,30 +73,8 @@ export const CustomerReviewsSection = (): JSX.Element => {
       type: "thirdparty",
     },
     // Pharmacy Reviews
-    {
-      title: "Pharmacy Review",
-      quote:
-        '"Our customers trust NUTRAZS products. The brand recognition and quality assurance make them our top-selling supplements."',
-      author: "MedPlus Pharmacy Chain",
-      branch: "Regional Head - South India",
-      stores: "450+ Stores",
-      photo: "/figmaAssets/photo-2.png",
-      rating: "/figmaAssets/mask-group-1.png",
-      type: "pharmacy",
-    },
+ 
 
-    // Distributor Review
-    {
-      title: "Distributor Review",
-      quote:
-        '"Partnering with NUTRAZS has been excellent. Their supply chain efficiency, product range, and support make distribution seamless across regions."',
-      author: "HealthCare Distributors",
-      role: "National Distribution Head",
-      coverage: "Pan India Coverage",
-      photo: "/figmaAssets/photo-2.png",
-      rating: "/figmaAssets/mask-group-2.png",
-      type: "distributor",
-    },
   ];
 
   return (
@@ -105,6 +95,7 @@ export const CustomerReviewsSection = (): JSX.Element => {
 
         {/* Review Cards Carousel */}
         <Carousel
+          setApi={setApi}
           opts={{
             align: "start",
             loop: true,
