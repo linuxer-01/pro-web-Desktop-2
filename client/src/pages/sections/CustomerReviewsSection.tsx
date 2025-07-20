@@ -7,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export const CustomerReviewsSection = (): JSX.Element => {
   // All reviews data - doctors, third party, pharmacy, and distributor
@@ -40,10 +41,10 @@ export const CustomerReviewsSection = (): JSX.Element => {
     {
       title: "Third Party Review",
       quote:
-        '"NUTRAZS has consistently delivered quality products. Their GMP certification and testing standards ensure reliability for our customers."',
-      author: "Quality Assurance Lab",
-      company: "Certified Testing Services",
-      location: "Mumbai",
+        '"NUTRAZS has consistently delivered quality products. Their GMP certification and testing standards ensure reliability for our customers. Best manufacturer"',
+      author: "Sathyam Pharmacy",
+      company: "",
+      location: "Kannyakumari",
       photo: "/figmaAssets/photo-2.png",
       rating: "/figmaAssets/mask-group.png",
       type: "thirdparty",
@@ -52,9 +53,9 @@ export const CustomerReviewsSection = (): JSX.Element => {
       title: "Third Party Review",
       quote:
         '"Outstanding manufacturing standards. NUTRAZS maintains excellent batch consistency and documentation for all their supplement lines."',
-      author: "ISO Certification Board",
-      company: "International Standards Authority",
-      location: "New Delhi",
+      author: "ZeeZ Pharmaceuticals Pvt Ltd",
+      company: "",
+      location: "Chennai",
       photo: "/figmaAssets/photo-2.png",
       rating: "/figmaAssets/mask-group-2.png",
       type: "thirdparty",
@@ -71,17 +72,7 @@ export const CustomerReviewsSection = (): JSX.Element => {
       rating: "/figmaAssets/mask-group-1.png",
       type: "pharmacy",
     },
-    {
-      title: "Pharmacy Review",
-      quote:
-        '"NUTRAZS products have excellent shelf life and packaging. Customer satisfaction rates are consistently high across all locations."',
-      author: "Apollo Pharmacy",
-      branch: "Purchase Manager",
-      stores: "5000+ Outlets Nationwide",
-      photo: "/figmaAssets/photo-2.png",
-      rating: "/figmaAssets/mask-group.png",
-      type: "pharmacy",
-    },
+
     // Distributor Review
     {
       title: "Distributor Review",
@@ -161,7 +152,7 @@ export const CustomerReviewsSection = (): JSX.Element => {
                               />
                             </div>
                             <div className="flex items-center justify-between">
-                              <a 
+                              <a
                                 href={review.locationLink}
                                 className="font-['Poppins',Helvetica] font-normal text-[#2b552c] text-xs md:text-sm tracking-[-0.2px] hover:underline cursor-pointer flex items-center gap-1"
                               >
@@ -275,8 +266,12 @@ export const CustomerReviewsSection = (): JSX.Element => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="text-white border-white hover:bg-white hover:text-black -left-6 md:-left-12" />
-          <CarouselNext className="text-white border-white hover:bg-white hover:text-black -right-6 md:-right-12" />
+          <CarouselPrevious className="bg-[#2b552c] text-white border-none hover:bg-[#1e3a1f] -left-8 md:-left-12 w-10 h-10 md:w-12 md:h-12 rounded-full shadow-lg transition-all duration-300 hover:scale-110">
+            <ChevronLeft className="h-4 w-4 md:h-5 md:w-5" />
+          </CarouselPrevious>
+          <CarouselNext className="bg-[#2b552c] text-white border-none hover:bg-[#1e3a1f] -right-8 md:-right-12 w-10 h-10 md:w-12 md:h-12 rounded-full shadow-lg transition-all duration-300 hover:scale-110">
+            <ChevronRight className="h-4 w-4 md:h-5 md:w-5" />
+          </CarouselNext>
         </Carousel>
       </div>
     </section>
